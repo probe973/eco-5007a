@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rearranging Equations - ECO-5007A</title>
+    <title>Rearranging Equations</title>
     <!-- Font Awesome (for icons in navbar and solution toggles) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to your shared stylesheet (relative path from this folder) -->
@@ -636,7 +636,8 @@
         }
 
         // Function to load the common header and set the specific page title
-async function loadHeader(pageTitle) {
+            // Function to load the common header and set the specific page title
+async function loadHeader() { // No pageTitle parameter needed anymore
     try {
         const response = await fetch('../assets/header.html');
         if (!response.ok) {
@@ -645,9 +646,11 @@ async function loadHeader(pageTitle) {
         const headerHtml = await response.text();
         document.getElementById('header-placeholder').innerHTML = headerHtml;
 
+        // Automatically derive the main title from the document's <title> tag
+        const rawPageTitle = document.title;
         const titleElement = document.getElementById('page-main-title');
         if (titleElement) {
-            titleElement.textContent = pageTitle;
+            titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
         }
     } catch (error) {
         console.error("Failed to load header:", error);
@@ -688,8 +691,8 @@ async function loadHeader(pageTitle) {
         // Load navbar and then typeset MathJax after the DOM is fully loaded.
         document.addEventListener('DOMContentLoaded', function() {
     loadNavbar().then(() => {
-        // Call loadHeader with the specific title for THIS page
-        loadHeader("Rearranging Equations").then(() => { // <--- CHANGE THIS LINE
+        // Call loadHeader without any parameters, it will now derive the title automatically
+        loadHeader().then(() => {
             try {
                 if (typeof MathJax !== 'undefined') {
                     MathJax.typesetPromise();
