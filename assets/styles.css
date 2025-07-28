@@ -8,7 +8,25 @@ body {
     margin: 0;
     padding-top: 4rem; /* Space for fixed navbar */
     line-height: 1.6;
+    /* NEW: Responsive horizontal padding for the body to prevent overflow on small screens */
+    padding-left: 1rem;   /* Default padding for very small screens (16px) */
+    padding-right: 1rem;  /* Default padding for very small screens (16px) */
 }
+
+/* Media queries for responsive padding, mirroring Tailwind's px-4 sm:px-6 lg:px-8 */
+@media (min-width: 640px) { /* Equivalent to sm: breakpoint */
+    body {
+        padding-left: 1.5rem; /* 24px */
+        padding-right: 1.5rem; /* 24px */
+    }
+}
+@media (min-width: 1024px) { /* Equivalent to lg: breakpoint */
+    body {
+        padding-left: 2rem; /* 32px */
+        padding-right: 2rem; /* 32px */
+    }
+}
+
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -166,8 +184,6 @@ a:hover {
 }
 
 /* Specific styling for MathJax output within solutions */
-/* Important: MathJax often wraps equations in specific classes/elements.
-   These styles target those elements. */
 .solution-content .MathJax_Display {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
@@ -185,9 +201,10 @@ a:hover {
 
 /* General content container for topic pages */
 .content-container {
-    max-width: 960px; /* Max width for content */
+    /* Changed max-width to match index.html's max-w-4xl (56rem = 896px) */
+    max-width: 896px;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem; /* Keep internal padding */
     background-color: #ffffff;
     border-radius: 0.75rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
