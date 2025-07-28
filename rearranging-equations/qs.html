@@ -576,20 +576,32 @@
     </footer>
 
     <script>
+        // This function handles the expand/collapse logic for solution sections
         function toggleSolution(header) {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.icon');
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
 
+            // Toggle the 'expanded' class on both header and content
             header.classList.toggle('expanded');
             content.classList.toggle('expanded');
 
+            // Adjust max-height for smooth transition
             if (content.classList.contains('expanded')) {
-                // Set max-height to scrollHeight to allow for dynamic content
+                // When expanding, set max-height to its scrollHeight to reveal full content
                 content.style.maxHeight = content.scrollHeight + "px";
             } else {
-                content.style.maxHeight = null; // Reset to 0 for collapse
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
             }
         }
+
+        // Ensure MathJax typesets after the DOM is fully loaded
+        // This is a robust way to ensure all math is rendered
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof MathJax !== 'undefined') {
+                MathJax.typesetPromise();
+            }
+        });
     </script>
 
 </body>
