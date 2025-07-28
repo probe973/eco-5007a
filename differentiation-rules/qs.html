@@ -21,12 +21,7 @@
 
     <!-- Main Content Container -->
     <div class="content-container">
-        <header class="text-center mb-10">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-2">
-                Differentiation Rules
-            </h1>
-            <p class="text-xl text-gray-600">LLE – Mathematics and Statistics Skills</p>
-        </header>
+        <div id="header-placeholder"></div>
 
         <section class="mb-12">
             <h2 class="text-3xl font-bold section-title mb-6">
@@ -623,6 +618,28 @@
             }
         }
 
+        // Function to load the common header and set the specific page title
+// Function to load the common header and set the specific page title
+async function loadHeader() { // No pageTitle parameter needed anymore
+    try {
+        const response = await fetch('../assets/header.html');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const headerHtml = await response.text();
+        document.getElementById('header-placeholder').innerHTML = headerHtml;
+
+        // Automatically derive the main title from the document's <title> tag
+        const rawPageTitle = document.title;
+        const titleElement = document.getElementById('page-main-title');
+        if (titleElement) {
+            titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
+        }
+    } catch (error) {
+        console.error("Failed to load header:", error);
+    }
+}
+        
         // This function handles the expand/collapse logic for solution sections
         function toggleSolution(header) {
             const content = header.nextElementSibling; // Get the content div immediately after the header
@@ -656,16 +673,19 @@
         // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
         // Load navbar and then typeset MathJax after the DOM is fully loaded.
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavbar().then(() => {
-                try {
-                    if (typeof MathJax !== 'undefined') {
-                        MathJax.typesetPromise();
-                    }
-                } catch (error) {
-                    console.error("MathJax initial typesetting error:", error);
+    loadNavbar().then(() => {
+        // Call loadHeader without any parameters, it will now derive the title automatically
+        loadHeader().then(() => {
+            try {
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise();
                 }
-            });
+            } catch (error) {
+                console.error("MathJax initial typesetting error:", error);
+            }
         });
+    });
+});
     </script>
 
 </body>
