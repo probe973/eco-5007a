@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiation Rules - ECO-5007A</title>
+    <!-- Font Awesome (for icons in navbar and solution toggles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to your shared stylesheet (relative path from this folder) -->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!-- MathJax configuration -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax library -->
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="content-container">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-2">
+                Differentiation Rules
+            </h1>
+            <p class="text-xl text-gray-600">LLE – Mathematics and Statistics Skills</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Power Rule
+            </h2>
+            <p>Given the function $y=ax^n$, the derivative is:</p>
+            $$ \frac{dy}{dx}=nax^{n-1} $$
+            <p>Use this rule to differentiate:</p>
+
+            <!-- Question 1 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">1. $y=5x^4$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 20x^3 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">2. $y=7x^2$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 14x $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">3. $y=\frac{2}{3}x^6$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 4x^5 $$
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 mb-4">These indices facts will be useful for the next questions:</p>
+            $$ x^{-n} = \frac{1}{x^n} $$
+            $$ x^{\frac{1}{n}} = \sqrt[n]{x} $$
+            $$ x^a \times x^b = x^{a+b} $$
+            $$ \frac{x^a}{x^b} = x^{a-b} $$
+            $$ (x^a)^b = x^{ab} $$
+            <p class="mb-4">Use the power rule to differentiate:</p>
+
+            <!-- Question 4 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">4. $y=\frac{3x^3}{x^5}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y = 3x^{-2}$</p>
+                        $$ \frac{dy}{dx} = -6x^{-3} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">5. $y=\frac{10}{x^2}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y = 10x^{-2}$</p>
+                        $$ \frac{dy}{dx} = -20x^{-3} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">6. $y=2x^{\frac{2}{3}}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = \frac{4}{3}x^{-\frac{1}{3}} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">7. $y=4\sqrt{x}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y = 4x^{1/2}$</p>
+                        $$ \frac{dy}{dx} = 2x^{-1/2} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">8. $y=\frac{2}{3x^2}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y = \frac{2}{3}x^{-2}$</p>
+                        $$ \frac{dy}{dx} = -\frac{4}{3}x^{-3} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">9. $y=\frac{10}{x}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y = 10x^{-1}$</p>
+                        $$ \frac{dy}{dx} = -10x^{-2} $$
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 mb-4">The power rule can be used to show:</p>
+            $$ y=ax, \quad \frac{dy}{dx}=a $$
+            $$ y=a, \quad \frac{dy}{dx}=0 $$
+            <p class="mb-4">Put this altogether and differentiate:</p>
+
+            <!-- Question 10 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">10. $y=5x^2+4x+3$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 10x + 4 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">11. $y=x^4-2x^{-5}+\frac{1}{x}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 4x^3 + 10x^{-6} - x^{-2} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">12. $y=1+2\sqrt{x}+\frac{2}{5x}+\frac{3}{4x^2}+\frac{5}{2x^3}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = x^{-1/2} - \frac{2}{5}x^{-2} - \frac{3}{2}x^{-3} - \frac{15}{2}x^{-4} $$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Exponentials
+            </h2>
+            <p>Given the function $y=ae^x$, the derivative is:</p>
+            $$ \frac{dy}{dx}=ae^x $$
+            <p>Not many questions here, differentiate:</p>
+
+            <!-- Question 13 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">1. $y=5e^x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 5e^x $$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Logarithms
+            </h2>
+            <p>Given the function $y=a\ln x$, the derivative is:</p>
+            $$ \frac{dy}{dx}=\frac{a}{x} $$
+            <p>Differentiate:</p>
+
+            <!-- Question 14 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">1. $y=5\ln x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = \frac{5}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">2. $y=\frac{\ln x}{2}-3e^x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = \frac{1}{2x} - 3e^x $$
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 mb-4">The following log laws will be useful:</p>
+            $$ \ln(AB)=\ln A+\ln B $$
+            $$ \ln\left(\frac{A}{B}\right)=\ln A-\ln B $$
+            $$ \ln(A^n)=n\ln A $$
+            <p class="mb-4">Differentiate:</p>
+
+            <!-- Question 16 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">3. $y=\ln 4x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y=\ln 4 + \ln x$</p>
+                        $$ \frac{dy}{dx} = \frac{1}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">4. $y=\ln 0.443x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y=\ln 0.443 + \ln x$</p>
+                        $$ \frac{dy}{dx} = \frac{1}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">5. $y=\ln \frac{2}{x}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y=\ln 2 - \ln x$</p>
+                        $$ \frac{dy}{dx} = -\frac{1}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">6. $y=\ln x^{10}$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y=10\ln x$</p>
+                        $$ \frac{dy}{dx} = \frac{10}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">7. $y=6\ln \frac{1}{2}x$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$y=6(\ln \tfrac{1}{2} + \ln x)$</p>
+                        $$ \frac{dy}{dx} = \frac{6}{x} $$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Mixed Questions
+            </h2>
+            <p class="mb-4">For each question find the requested derivative:</p>
+
+            <!-- Question 21 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">1. $y=5x^3+x^2-4x+1+3e^x+\ln 2x \quad \frac{dy}{dx}=$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 15x^2 + 2x - 4 + 3e^x + \frac{1}{x} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">2. $y=2x+5\sqrt{x}-\frac{4}{x}+\frac{3}{x^2} \quad \frac{dy}{dx}=$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 2 + \frac{5}{2\sqrt{x}} + \frac{4}{x^2} - \frac{6}{x^3} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">3. $y=5t^2-2t^{\frac{3}{4}}+6\ln 0.1t \quad \frac{dy}{dt}=$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dt} = 10t - \frac{3}{2}t^{-1/4} + \frac{6}{t} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">4. $P=6e^n-4+\frac{5}{2}n-\frac{6}{\sqrt{n}} \quad \frac{dP}{dn}=$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dP}{dn} = 6e^n + \frac{5}{2} + 3n^{-3/2} $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">5. $G=5s^2(3s-4) \quad \frac{dG}{ds}=$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        <p>$G = 15s^3 - 20s^2$</p>
+                        $$ \frac{dG}{ds} = 45s^2 - 40s $$
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 mb-4">By substituting into the function and into the derived function, find the value of the function and the value of the gradient at the given $x$ values:</p>
+
+            <!-- Question 26 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">6. $y=5x^2-12x+2, \quad x=2$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 10x - 12 $$
+                        <p>$y = 0$</p>
+                        $$ \frac{dy}{dx} = 8 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">7. $y=4x^3+x+10, \quad x=-1$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 12x^2 + 1 $$
+                        <p>$y = 5$</p>
+                        $$ \frac{dy}{dx} = 13 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 28 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">8. $y=x^2+5x-1, \quad x=-2.5$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 2x + 5 $$
+                        <p>$y = -7.25$</p>
+                        $$ \frac{dy}{dx} = 0 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">9. $y=4e^x-10\sqrt{x}, \quad x=2$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = 4e^x - \frac{5}{\sqrt{x}} $$
+                        <p>$y \approx 15.42$</p>
+                        $$ \frac{dy}{dx} \approx 26.02 $$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="question-block mb-8">
+                <h3 class="text-xl font-semibold mb-2">10. $y=5-\frac{5}{x}+\frac{5}{x^2}, \quad x=1$</h3>
+                <div class="solution-container">
+                    <div class="solution-header" onclick="toggleSolution(this)">
+                        <span>Show Solution</span>
+                        <i class="fas fa-chevron-right icon"></i>
+                    </div>
+                    <div class="solution-content">
+                        $$ \frac{dy}{dx} = \frac{5}{x^2} - \frac{10}{x^3} $$
+                        <p>$y = 5$</p>
+                        $$ \frac{dy}{dx} = -5 $$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+    <script>
+        // Function to load external HTML content (navbar)
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
+        // This function handles the expand/collapse logic for solution sections
+        function toggleSolution(header) {
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
+
+            // Toggle the 'expanded' class on both header and content
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+
+            // Adjust max-height for smooth transition
+            if (content.classList.contains('expanded')) {
+                // When expanding, set max-height to its scrollHeight to reveal full content
+                content.style.maxHeight = content.scrollHeight + "px";
+                // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]);
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
+                }
+            } else {
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
+            }
+        }
+
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar().then(() => {
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise();
+                    }
+                } catch (error) {
+                    console.error("MathJax initial typesetting error:", error);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
