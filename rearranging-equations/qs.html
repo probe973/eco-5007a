@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to your shared stylesheet (relative path from this folder) -->
     <link rel="stylesheet" href="../assets/styles.css">
-    <!-- MathJax configuration (must be loaded BEFORE the MathJax script itself) -->
+
+    <!-- MathJax configuration (MUST be loaded BEFORE the MathJax library itself) -->
     <script type="text/javascript" src="../assets/mathjax_config.js"></script>
     <!-- MathJax library -->
     <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -590,8 +591,13 @@
                 // When expanding, set max-height to its scrollHeight to reveal full content
                 content.style.maxHeight = content.scrollHeight + "px";
                 // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
-                if (typeof MathJax !== 'undefined') {
-                    MathJax.typesetPromise([content]);
+                // Use MathJax.typesetPromise() on the specific content element
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]);
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
                 }
             } else {
                 // When collapsing, reset max-height to null (or 0)
@@ -600,11 +606,18 @@
         }
 
         // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof MathJax !== 'undefined') {
-                MathJax.typesetPromise();
+        // Use window.onload to ensure all elements are loaded before MathJax tries to typeset
+        window.onload = function() {
+            try {
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise();
+                } else {
+                    console.warn("MathJax is not defined. Check script loading.");
+                }
+            } catch (error) {
+                console.error("MathJax initial typesetting error:", error);
             }
-        });
+        };
     </script>
 
 </body>
