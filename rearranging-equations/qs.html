@@ -589,14 +589,17 @@
             if (content.classList.contains('expanded')) {
                 // When expanding, set max-height to its scrollHeight to reveal full content
                 content.style.maxHeight = content.scrollHeight + "px";
+                // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise([content]);
+                }
             } else {
                 // When collapsing, reset max-height to null (or 0)
                 content.style.maxHeight = null;
             }
         }
 
-        // Ensure MathJax typesets after the DOM is fully loaded
-        // This is a robust way to ensure all math is rendered
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof MathJax !== 'undefined') {
                 MathJax.typesetPromise();
