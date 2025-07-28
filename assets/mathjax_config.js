@@ -1,29 +1,22 @@
-// mathjax_config.js
+// assets/mathjax_config.js
 
 MathJax = {
     tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']]
     },
-    options: {
-        scale: 0.9, // Slightly larger scale for better readability
-        renderActions: {
-            /* This section is for custom render actions if needed.
-               For example, to apply custom CSS classes to MathJax output.
-               Not strictly necessary for basic setup.
-            */
-            addMenu: [20, function (doc) {
-                doc.menu.find('Reset').setEnable(true);
-            }, '', false],
-            addCopy: [20, function (doc) {
-                doc.menu.find('Copy').setEnable(true);
-            }, '', false]
-        }
-    },
     svg: {
         fontCache: 'global'
     },
     chtml: {
-        scale: 1, // Ensure CHTML output also respects scaling
-        linebreaks: { automatic: true, width: "container" } // Enable automatic line breaks for equations
+        scale: 1, // As you suggested, scale moved here.
+        linebreaks: { automatic: true, width: "container" }
+    },
+    options: {
+        // Removed scale from here.
+        // Keeping renderActions if you want the reset/copy menu items.
+        renderActions: {
+            addMenu: [20, function (doc) { doc.menu.find('Reset').setEnable(true); }, '', false],
+            addCopy: [20, function (doc) { doc.menu.find('Copy').setEnable(true); }, '', false]
+        }
     }
 };
