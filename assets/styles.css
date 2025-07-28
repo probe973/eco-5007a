@@ -1,0 +1,194 @@
+/* styles.css */
+
+/* Global Body Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Consistent font across the site */
+    background-color: #f0f4ff; /* Light blue-gray background for a softer look */
+    color: #334155; /* Dark slate gray for main text */
+    margin: 0;
+    padding-top: 4rem; /* Space for fixed navbar */
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #1e293b; /* Darker blue-gray for headings */
+    font-weight: 700; /* Bold headings */
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: #3b82f6; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #1d4ed8; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Section Titles (as used in index.html) */
+.section-title {
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+}
+
+/* Card Styling (as used in index.html, can be adapted for topic pages if needed) */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.card-icon {
+    font-size: 1.8rem;
+    color: #4a90e2;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e293b; /* Dark background for navbar */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    z-index: 1000; /* Ensure navbar stays on top */
+    border-bottom-left-radius: 0.5rem; /* Rounded corners for the bottom of the navbar */
+    border-bottom-right-radius: 0.5rem;
+}
+
+.navbar-container {
+    display: flex;
+    gap: 2rem; /* Space between navbar links */
+    max-width: 960px; /* Limit width for better readability */
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #334155; /* Slightly lighter dark on hover */
+    text-decoration: none; /* No underline on hover for navbar links */
+}
+
+/* Collapsible Solution Section */
+.solution-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #cbd5e1; /* Light gray border */
+    border-radius: 0.75rem;
+    overflow: hidden; /* Hide overflow for smooth collapse */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.solution-header {
+    background-color: #e2e8f0; /* Light gray header */
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #1e293b;
+    border-bottom: 1px solid #cbd5e1; /* Separator */
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.solution-header:hover {
+    background-color: #d1d9e2; /* Slightly darker on hover */
+}
+
+.solution-content {
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition */
+    padding: 0 1.5rem; /* No vertical padding when collapsed */
+}
+
+.solution-content.expanded {
+    max-height: 2000px; /* Arbitrarily large value for expansion */
+    padding: 1.5rem; /* Padding when expanded */
+}
+
+.solution-content p {
+    margin-bottom: 0.75rem; /* Slightly less margin for paragraphs inside solutions */
+}
+
+/* Icon for expand/collapse */
+.solution-header .icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.solution-header.expanded .icon {
+    transform: rotate(90deg); /* Rotate icon when expanded */
+}
+
+/* Specific styling for MathJax output within solutions */
+.solution-content .MathJax_Display {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    padding-left: 1rem; /* Indent displayed equations */
+    padding-right: 1rem;
+    background-color: #f8fafc; /* Very light background for equations */
+    border-left: 3px solid #60a5fa; /* Blue left border */
+    border-radius: 0.25rem;
+}
+
+/* Ensure inline math doesn't break lines awkwardly */
+.mjx-chtml {
+    white-space: nowrap; /* Prevent inline math from breaking */
+}
+
+/* General content container for topic pages */
+.content-container {
+    max-width: 960px; /* Max width for content */
+    width: 100%;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem; /* Space below navbar */
+    margin-bottom: 2rem;
+}
