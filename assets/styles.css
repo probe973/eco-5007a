@@ -8,25 +8,8 @@ body {
     margin: 0;
     padding-top: 4rem; /* Space for fixed navbar */
     line-height: 1.6;
-    /* NEW: Responsive horizontal padding for the body to prevent overflow on small screens */
-    padding-left: 1rem;   /* Default padding for very small screens (16px) */
-    padding-right: 1rem;  /* Default padding for very small screens (16px) */
+    /* Removed horizontal padding from body. Content container will manage its own responsive padding. */
 }
-
-/* Media queries for responsive padding, mirroring Tailwind's px-4 sm:px-6 lg:px-8 */
-@media (min-width: 640px) { /* Equivalent to sm: breakpoint */
-    body {
-        padding-left: 1.5rem; /* 24px */
-        padding-right: 1.5rem; /* 24px */
-    }
-}
-@media (min-width: 1024px) { /* Equivalent to lg: breakpoint */
-    body {
-        padding-left: 2rem; /* 32px */
-        padding-right: 2rem; /* 32px */
-    }
-}
-
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -201,10 +184,8 @@ a:hover {
 
 /* General content container for topic pages */
 .content-container {
-    /* Changed max-width to match index.html's max-w-4xl (56rem = 896px) */
-    max-width: 896px;
-    width: 100%;
-    padding: 2rem; /* Keep internal padding */
+    max-width: 896px; /* Matches Tailwind's max-w-4xl (56rem) */
+    width: calc(100% - 2rem); /* Start with 100% minus default padding (1rem on each side) */
     background-color: #ffffff;
     border-radius: 0.75rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -212,4 +193,25 @@ a:hover {
     margin-bottom: 2rem;
     margin-left: auto; /* Center the container */
     margin-right: auto; /* Center the container */
+    
+    /* NEW: Responsive padding for the content container itself */
+    padding: 1rem; /* Default padding for very small screens (16px all around) */
 }
+
+/* Media queries for responsive padding on content-container, mirroring Tailwind's p-4 sm:p-6 lg:p-8 */
+@media (min-width: 640px) { /* Equivalent to sm: breakpoint */
+    .content-container {
+        padding: 1.5rem; /* 24px all around */
+        width: calc(100% - 3rem); /* Adjust width for 1.5rem padding on each side */
+    }
+}
+@media (min-width: 1024px) { /* Equivalent to lg: breakpoint */
+    .content-container {
+        padding: 2rem; /* 32px all around */
+        width: calc(100% - 4rem); /* Adjust width for 2rem padding on each side */
+    }
+}
+
+/* Ensure content container doesn't get too wide on very large screens */
+/* The max-width will take precedence over width: 100% when the viewport is wide enough */
+/* The calc() for width ensures it respects the padding on smaller screens */
