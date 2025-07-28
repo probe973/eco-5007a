@@ -9,21 +9,15 @@
     <!-- Link to your shared stylesheet (relative path from this folder) -->
     <link rel="stylesheet" href="../assets/styles.css">
 
-    <!-- MathJax configuration (now external again, with corrected config) -->
+    <!-- MathJax configuration -->
     <script type="text/javascript" src="../assets/mathjax_config.js"></script>
     <!-- MathJax library -->
-   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="../index.html"><i class="fas fa-home mr-2"></i> Home</a>
-            <a href="q.pdf" target="_blank"><i class="fas fa-download mr-2"></i> Download Questions PDF</a>
-            <a href="s.pdf" target="_blank"><i class="fas fa-download mr-2"></i> Download Solutions PDF</a>
-        </div>
-    </nav>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Main Content Container -->
     <div class="content-container">
@@ -210,7 +204,7 @@
                         <p>Divide by $2m$:</p>
                         $$ x = \frac{-ty}{2m} $$
                     </div>
-                </div>
+                ></div>
             </div>
 
             <!-- Question 10 -->
@@ -440,7 +434,6 @@
                         <p>Raise both sides to the power of $\frac{4}{3}$:</p>
                         $$ (x^{\frac{3}{4}})^{\frac{4}{3}} = (8m)^{\frac{4}{3}} $$
                         $$ x = 8^{\frac{4}{3}} m^{\frac{4}{3}} $$
-                        $$ x = (\sqrt[3]{8})^4 m^{\frac{4}{3}} $$
                         $$ x = 2^4 m^{\frac{4}{3}} $$
                         $$ x = 16 m^{\frac{4}{3}} $$
                     </div>
@@ -577,6 +570,20 @@
     </footer>
 
     <script>
+        // Function to load external HTML content
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
         // This function handles the expand/collapse logic for solution sections
         function toggleSolution(header) {
             const content = header.nextElementSibling; // Get the content div immediately after the header
@@ -591,7 +598,6 @@
                 // When expanding, set max-height to its scrollHeight to reveal full content
                 content.style.maxHeight = content.scrollHeight + "px";
                 // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
-                // Use MathJax.typesetPromise() on the specific content element
                 try {
                     if (typeof MathJax !== 'undefined') {
                         console.log("MathJax: Typesetting content on expand for:", content);
@@ -609,24 +615,26 @@
         }
 
         // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
-        // Use DOMContentLoaded to ensure the HTML structure is ready before MathJax processes it.
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOMContentLoaded fired. Attempting initial MathJax typesetting.");
-            try {
-                if (typeof MathJax !== 'undefined') {
-                    MathJax.typesetPromise()
-                        .then(() => {
-                            console.log("MathJax: Initial typesetting complete.");
-                        })
-                        .catch((error) => {
-                            console.error("MathJax: Initial typesetting failed:", error);
-                        });
-                } else {
-                    console.warn("MathJax is not defined on DOMContentLoaded. Check script loading.");
+            console.log("DOMContentLoaded fired. Loading navbar and attempting initial MathJax typesetting.");
+            loadNavbar().then(() => {
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise()
+                            .then(() => {
+                                console.log("MathJax: Initial typesetting complete.");
+                            })
+                            .catch((error) => {
+                                console.error("MathJax: Initial typesetting failed:", error);
+                            });
+                    } else {
+                        console.warn("MathJax is not defined on DOMContentLoaded. Check script loading.");
+                    }
+                } catch (error) {
+                    console.error("MathJax initial typesetting error (outside promise):", error);
                 }
-            } catch (error) {
-                console.error("MathJax initial typesetting error (outside promise):", error);
-            }
+            });
         });
     </script>
 
