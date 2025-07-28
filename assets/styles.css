@@ -6,7 +6,7 @@ body {
     background-color: #f0f4ff; /* Light blue-gray background for a softer look */
     color: #334155; /* Dark slate gray for main text */
     margin: 0;
-    padding-top: 4rem; /* Space for fixed navbar */
+    padding-top: 4rem; /* Space for fixed navbar (even if hidden, for consistency) */
     line-height: 1.6;
     /* Removed horizontal padding from body. Content container will manage its own responsive padding. */
 }
@@ -82,7 +82,7 @@ a:hover {
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: flex; /* Default to flex */
     justify-content: center; /* Center the links */
     align-items: center;
     z-index: 1000; /* Ensure navbar stays on top */
@@ -111,6 +111,18 @@ a:hover {
     background-color: #334155; /* Slightly lighter dark on hover */
     text-decoration: none; /* No underline on hover for navbar links */
 }
+
+/* NEW: Hide the entire navbar on screens smaller than 640px (sm breakpoint) */
+@media (max-width: 639px) {
+    .navbar {
+        display: none;
+    }
+    /* Adjust body padding-top if navbar is hidden to remove empty space */
+    body {
+        padding-top: 0;
+    }
+}
+
 
 /* Collapsible Solution Section */
 .solution-container {
@@ -194,7 +206,7 @@ a:hover {
     margin-left: auto; /* Center the container */
     margin-right: auto; /* Center the container */
     
-    /* NEW: Responsive padding for the content container itself */
+    /* Responsive padding for the content container itself */
     padding: 1rem; /* Default padding for very small screens (16px all around) */
 }
 
@@ -211,7 +223,3 @@ a:hover {
         width: calc(100% - 4rem); /* Adjust width for 2rem padding on each side */
     }
 }
-
-/* Ensure content container doesn't get too wide on very large screens */
-/* The max-width will take precedence over width: 100% when the viewport is wide enough */
-/* The calc() for width ensures it respects the padding on smaller screens */
