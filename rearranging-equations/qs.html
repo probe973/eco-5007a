@@ -9,33 +9,10 @@
     <!-- Link to your shared stylesheet (relative path from this folder) -->
     <link rel="stylesheet" href="../assets/styles.css">
 
-    <!-- MathJax configuration (EMBEDDED DIRECTLY for debugging) -->
-    <script type="text/javascript">
-        console.log("MathJax config script started.");
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            },
-            options: {
-                scale: 0.9,
-                renderActions: {
-                    addMenu: [20, function (doc) { doc.menu.find('Reset').setEnable(true); }, '', false],
-                    addCopy: [20, function (doc) { doc.menu.find('Copy').setEnable(true); }, '', false]
-                }
-            },
-            svg: {
-                fontCache: 'global'
-            },
-            chtml: {
-                scale: 1,
-                linebreaks: { automatic: true, width: "container" }
-            }
-        };
-        console.log("MathJax config object defined.");
-    </script>
+    <!-- MathJax configuration (now external again, with corrected config) -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
     <!-- MathJax library -->
     <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>console.log("MathJax library script tag added.");</script>
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
 
