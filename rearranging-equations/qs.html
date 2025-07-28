@@ -9,10 +9,33 @@
     <!-- Link to your shared stylesheet (relative path from this folder) -->
     <link rel="stylesheet" href="../assets/styles.css">
 
-    <!-- MathJax configuration (MUST be loaded BEFORE the MathJax library itself) -->
-    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax configuration (EMBEDDED DIRECTLY for debugging) -->
+    <script type="text/javascript">
+        console.log("MathJax config script started.");
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            options: {
+                scale: 0.9,
+                renderActions: {
+                    addMenu: [20, function (doc) { doc.menu.find('Reset').setEnable(true); }, '', false],
+                    addCopy: [20, function (doc) { doc.menu.find('Copy').setEnable(true); }, '', false]
+                }
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            chtml: {
+                scale: 1,
+                linebreaks: { automatic: true, width: "container" }
+            }
+        };
+        console.log("MathJax config object defined.");
+    </script>
     <!-- MathJax library -->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>console.log("MathJax library script tag added.");</script>
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
 
@@ -594,7 +617,10 @@
                 // Use MathJax.typesetPromise() on the specific content element
                 try {
                     if (typeof MathJax !== 'undefined') {
+                        console.log("MathJax: Typesetting content on expand for:", content);
                         MathJax.typesetPromise([content]);
+                    } else {
+                        console.warn("MathJax is not defined when trying to typeset on expand.");
                     }
                 } catch (error) {
                     console.error("MathJax typesetting error on expand:", error);
@@ -606,18 +632,25 @@
         }
 
         // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
-        // Use window.onload to ensure all elements are loaded before MathJax tries to typeset
-        window.onload = function() {
+        // Use DOMContentLoaded to ensure the HTML structure is ready before MathJax processes it.
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded fired. Attempting initial MathJax typesetting.");
             try {
                 if (typeof MathJax !== 'undefined') {
-                    MathJax.typesetPromise();
+                    MathJax.typesetPromise()
+                        .then(() => {
+                            console.log("MathJax: Initial typesetting complete.");
+                        })
+                        .catch((error) => {
+                            console.error("MathJax: Initial typesetting failed:", error);
+                        });
                 } else {
-                    console.warn("MathJax is not defined. Check script loading.");
+                    console.warn("MathJax is not defined on DOMContentLoaded. Check script loading.");
                 }
             } catch (error) {
-                console.error("MathJax initial typesetting error:", error);
+                console.error("MathJax initial typesetting error (outside promise):", error);
             }
-        };
+        });
     </script>
 
 </body>
