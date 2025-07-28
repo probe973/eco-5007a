@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO-5007A: Intermediate Microeconomics by LET</title>
+    <!-- Tailwind CSS CDN for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for the Inter font and overall body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light gray background */
+            color: #334155; /* Dark text color */
+        }
+        /* Styles for section titles */
+        .section-title {
+            border-bottom: 2px solid #cbd5e1; /* Light gray border */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #1e293b; /* Darker text for titles */
+        }
+        /* Card styling for topics/skills */
+        .card {
+            background-color: #ffffff; /* White card background */
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex; /* Use flexbox for icon and text alignment */
+            align-items: flex-start; /* Align items to the start */
+            gap: 1rem; /* Space between icon and text */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+        }
+        /* Icon styling within cards */
+        .card-icon {
+            font-size: 1.8rem; /* Larger icon size */
+            color: #4a90e2; /* Blue color for icons */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            margin-top: 0.25rem; /* Slight adjustment for vertical alignment */
+        }
+        /* Link styling */
+        a {
+            color: #3b82f6; /* Blue link color */
+            text-decoration: none; /* No underline by default */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Main Container -->
+    <div class="max-w-4xl w-full bg-white p-8 rounded-xl shadow-lg">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-2">
+                ECO-5007A: Intermediate Microeconomics
+            </h1>
+            <p class="text-xl text-gray-600">By LET</p>
+        </header>
+
+        <!-- Skills Workshops Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                <i class="fas fa-tools card-icon mr-3"></i> Skills Workshops
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skill 1: Rearranging Equations -->
+                <a href="rearranging-equations/qs.html" class="card">
+                    <i class="fas fa-calculator card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Rearranging Equations</h3>
+                        <p class="text-gray-600 text-sm">Master the fundamental algebraic techniques to isolate variables and solve equations, a crucial skill for all quantitative analysis.</p>
+                    </div>
+                </a>
+                <!-- Skill 2: Differentiation Rules -->
+                <a href="differentiation-rules/qs.html" class="card">
+                    <i class="fas fa-chart-line card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Differentiation Rules</h3>
+                        <p class="text-gray-600 text-sm">Explore the basic rules of differentiation, including power, constant, sum, and difference rules, essential for understanding rates of change.</p>
+                    </div>
+                </a>
+                <!-- Skill 3: Differentiation Chain Rule -->
+                <a href="differentiation-chain-rule/qs.html" class="card">
+                    <i class="fas fa-link card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Differentiation Chain Rule</h3>
+                        <p class="text-gray-600 text-sm">Learn how to differentiate composite functions using the chain rule, enabling you to tackle more complex derivatives.</p>
+                    </div>
+                </a>
+                <!-- Skill 4: Differentiation Product Rule -->
+                <a href="differentiation-product-rule/qs.html" class="card">
+                    <i class="fas fa-times card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Differentiation Product Rule</h3>
+                        <p class="text-gray-600 text-sm">Understand how to differentiate functions that are products of two or more terms using the product rule.</p>
+                    </div>
+                </a>
+                <!-- Skill 5: One Variable Optimisation -->
+                <a href="one-variable-optimisation/qs.html" class="card">
+                    <i class="fas fa-maximize card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">One Variable Optimisation</h3>
+                        <p class="text-gray-600 text-sm">Discover how to find maximum and minimum points of functions with a single variable, a core concept in economic optimization.</p>
+                    </div>
+                </a>
+                <!-- Skill 6: Partial Differentiation -->
+                <a href="partial-differentiation/qs.html" class="card">
+                    <i class="fas fa-cube card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Partial Differentiation</h3>
+                        <p class="text-gray-600 text-sm">Extend differentiation to functions with multiple variables, allowing you to analyze the impact of one variable while holding others constant.</p>
+                    </div>
+                </a>
+                <!-- Skill 7: Constrained Optimisation -->
+                <a href="constrained-optimisation/qs.html" class="card">
+                    <i class="fas fa-lock card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Constrained Optimisation</h3>
+                        <p class="text-gray-600 text-sm">Learn to optimize functions subject to constraints using methods like the Lagrangian, vital for understanding consumer and firm behavior.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Subject Specific Topics Section -->
+        <section>
+            <h2 class="text-3xl font-bold section-title mb-6">
+                <i class="fas fa-book-open card-icon mr-3"></i> Subject Specific Topics
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Topic 1: Marshallian Demand -->
+                <a href="marshallian-demand/qs.html" class="card">
+                    <i class="fas fa-chart-pie card-icon"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Marshallian Demand</h3>
+                        <p class="text-gray-600 text-sm">Understand how consumers make choices to maximize utility given their budget, leading to the derivation of Marshallian demand functions.</p>
+                    </div>
+                </a>
+                <!-- Add more subject-specific topics here as needed -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+</body>
+</html>
