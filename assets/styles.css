@@ -166,14 +166,16 @@ a:hover {
 }
 
 /* Specific styling for MathJax output within solutions */
+/* Important: MathJax often wraps equations in specific classes/elements.
+   These styles target those elements. */
 .solution-content .MathJax_Display {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
-    padding-left: 1rem; /* Indent displayed equations */
-    padding-right: 1rem;
+    padding: 1rem; /* Consistent padding */
     background-color: #f8fafc; /* Very light background for equations */
     border-left: 3px solid #60a5fa; /* Blue left border */
     border-radius: 0.25rem;
+    overflow-x: auto; /* Allow horizontal scrolling for very long equations */
 }
 
 /* Ensure inline math doesn't break lines awkwardly */
@@ -191,4 +193,6 @@ a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     margin-top: 2rem; /* Space below navbar */
     margin-bottom: 2rem;
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
 }
