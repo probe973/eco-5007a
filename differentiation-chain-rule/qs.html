@@ -43,128 +43,137 @@
             $$ \frac{dy}{dx} = 4(3x^2 + 5)^3 \cdot 6x = 24x(3x^2 + 5)^3 $$
             <p class="mt-4">For the example above:</p>
             <p>Inner: \(u = 3x^2 + 5 \quad \Rightarrow \quad \frac{du}{dx} = 6x\)</p>
-            <p>Outer: \(y = e^u \quad \Rightarrow \quad \frac{dy}{du} = e^u\)</p>
-            <p>\(\Rightarrow \frac{dy}{dx} = e^{2x^2 + 1} \cdot 4x\)</p>
+            <p>Outer: \(y = u^4 \quad \Rightarrow \quad \frac{dy}{du} = 4u^3\)</p>
+            <p>\(\Rightarrow \frac{dy}{dx} = 4u^3 \cdot 6x = 24x(3x^2 + 5)^3\)</p>
             <p class="mt-8 mb-4">Find the derivative of:</p>
 
-            <!-- Question 1 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">1.</h3>
-                <p class="question-body-text">\(y = (4x^2 + 3)^5\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+            <ol>
+                <!-- Question 1 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (4x^2 + 3)^5\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 4x^2 + 3\), then \(\frac{du}{dx} = 8x\)</p>
+                                <p>\(y = u^5 \Rightarrow \frac{dy}{du} = 5u^4\)</p>
+                                $$ \frac{dy}{dx} = 5(4x^2 + 3)^4 \cdot 8x = 40x(4x^2 + 3)^4 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 4x^2 + 3\), then \(\frac{du}{dx} = 8x\)</p>
-                        <p>\(y = u^5 \Rightarrow \frac{dy}{du} = 5u^4\)</p>
-                        $$ \frac{dy}{dx} = 5(4x^2 + 3)^4 \cdot 8x = 40x(4x^2 + 3)^4 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 2 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">2.</h3>
-                <p class="question-body-text">\(y = (7x^3 + 2)^4\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 2 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (7x^3 + 2)^4\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 7x^3 + 2\), then \(\frac{du}{dx} = 21x^2\)</p>
+                                <p>\(y = u^4 \Rightarrow \frac{dy}{du} = 4u^3\)</p>
+                                $$ \frac{dy}{dx} = 4(7x^3 + 2)^3 \cdot 21x^2 = 84x^2(7x^3 + 2)^3 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 7x^3 + 2\), then \(\frac{du}{dx} = 21x^2\)</p>
-                        <p>\(y = u^4 \Rightarrow \frac{dy}{du} = 4u^3\)</p>
-                        $$ \frac{dy}{dx} = 4(7x^3 + 2)^3 \cdot 21x^2 = 84x^2(7x^3 + 2)^3 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 3 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">3.</h3>
-                <p class="question-body-text">\(y = (5x^2 + x)^3\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 3 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (5x^2 + x)^3\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 5x^2 + x\), then \(\frac{du}{dx} = 10x + 1\)</p>
+                                <p>\(y = u^3 \Rightarrow \frac{dy}{du} = 3u^2\)</p>
+                                $$ \frac{dy}{dx} = 3(5x^2 + x)^2 (10x + 1) $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 5x^2 + x\), then \(\frac{du}{dx} = 10x + 1\)</p>
-                        <p>\(y = u^3 \Rightarrow \frac{dy}{du} = 3u^2\)</p>
-                        $$ \frac{dy}{dx} = 3(5x^2 + x)^2 (10x + 1) $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 4 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">4.</h3>
-                <p class="question-body-text">\(y = (1 - 2x)^6\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 4 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (1 - 2x)^6\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 1 - 2x\), then \(\frac{du}{dx} = -2\)</p>
+                                <p>\(y = u^6 \Rightarrow \frac{dy}{du} = 6u^5\)</p>
+                                $$ \frac{dy}{dx} = 6(1 - 2x)^5 \cdot (-2) = -12(1 - 2x)^5 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 1 - 2x\), then \(\frac{du}{dx} = -2\)</p>
-                        <p>\(y = u^6 \Rightarrow \frac{dy}{du} = 6u^5\)</p>
-                        $$ \frac{dy}{dx} = 6(1 - 2x)^5 \cdot (-2) = -12(1 - 2x)^5 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 5 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">5.</h3>
-                <p class="question-body-text">\(y = (2x - 3)^7\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 5 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (2x - 3)^7\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 2x - 3\), then \(\frac{du}{dx} = 2\)</p>
+                                <p>\(y = u^7 \Rightarrow \frac{dy}{du} = 7u^6\)</p>
+                                $$ \frac{dy}{dx} = 7(2x - 3)^6 \cdot 2 = 14(2x - 3)^6 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 2x - 3\), then \(\frac{du}{dx} = 2\)</p>
-                        <p>\(y = u^7 \Rightarrow \frac{dy}{du} = 7u^6\)</p>
-                        $$ \frac{dy}{dx} = 7(2x - 3)^6 \cdot 2 = 14(2x - 3)^6 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 6 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">6.</h3>
-                <p class="question-body-text">\(y = (x^2 + 5x - 3)^8\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 6 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (x^2 + 5x - 3)^8\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^2 + 5x - 3\), then \(\frac{du}{dx} = 2x + 5\)</p>
+                                <p>\(y = u^8 \Rightarrow \frac{dy}{du} = 8u^7\)</p>
+                                $$ \frac{dy}{dx} = 8(x^2 + 5x - 3)^7 (2x + 5) $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^2 + 5x - 3\), then \(\frac{du}{dx} = 2x + 5\)</p>
-                        <p>\(y = u^8 \Rightarrow \frac{dy}{du} = 8u^7\)</p>
-                        $$ \frac{dy}{dx} = 8(x^2 + 5x - 3)^7 (2x + 5) $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 7 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">7.</h3>
-                <p class="question-body-text">\(y = (4x^3 - x^2 + 2)^5\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 7 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (4x^3 - x^2 + 2)^5\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 4x^3 - x^2 + 2\), then \(\frac{du}{dx} = 12x^2 - 2x\)</p>
+                                <p>\(y = u^5 \Rightarrow \frac{dy}{du} = 5u^4\)</p>
+                                $$ \frac{dy}{dx} = 5(4x^3 - x^2 + 2)^4 (12x^2 - 2x) $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 4x^3 - x^2 + 2\), then \(\frac{du}{dx} = 12x^2 - 2x\)</p>
-                        <p>\(y = u^5 \Rightarrow \frac{dy}{du} = 5u^4\)</p>
-                        $$ \frac{dy}{dx} = 5(4x^3 - x^2 + 2)^4 (12x^2 - 2x) $$
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ol>
         </section>
 
         <section class="mb-12">
@@ -184,118 +193,127 @@
             <p>\(\Rightarrow \frac{dy}{dx} = e^{2x^2 + 1} \cdot 4x\)</p>
             <p class="mt-8 mb-4">Find the derivative of:</p>
 
-            <!-- Question 8 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">8.</h3>
-                <p class="question-body-text">\(y = e^{3x^2 + 4}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+            <ol start="8">
+                <!-- Question 8 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{3x^2 + 4}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 3x^2 + 4\), then \(\frac{du}{dx} = 6x\)</p>
+                                <p>\(y = e^u \Rightarrow \frac{dy}{du} = e^u\)</p>
+                                $$ \frac{dy}{dx} = e^{3x^2 + 4} \cdot 6x = 6x e^{3x^2 + 4} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 3x^2 + 4\), then \(\frac{du}{dx} = 6x\)</p>
-                        <p>\(y = e^u \Rightarrow \frac{dy}{du} = e^u\)</p>
-                        $$ \frac{dy}{dx} = e^{3x^2 + 4} \cdot 6x = 6x e^{3x^2 + 4} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 9 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">9.</h3>
-                <p class="question-body-text">\(y = e^{x^3 + 1}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 9 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{x^3 + 1}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^3 + 1\), then \(\frac{du}{dx} = 3x^2\)</p>
+                                $$ \frac{dy}{dx} = 3x^2 e^{x^3 + 1} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^3 + 1\), then \(\frac{du}{dx} = 3x^2\)</p>
-                        $$ \frac{dy}{dx} = 3x^2 e^{x^3 + 1} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 10 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">10.</h3>
-                <p class="question-body-text">\(y = e^{5x^4 + 2x}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 10 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{5x^4 + 2x}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 5x^4 + 2x\), then \(\frac{du}{dx} = 20x^3 + 2\)</p>
+                                $$ \frac{dy}{dx} = (20x^3 + 2) e^{5x^4 + 2x} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 5x^4 + 2x\), then \(\frac{du}{dx} = 20x^3 + 2\)</p>
-                        $$ \frac{dy}{dx} = (20x^3 + 2) e^{5x^4 + 2x} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 11 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">11.</h3>
-                <p class="question-body-text">\(y = e^{7x - 3}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 11 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{7x - 3}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 7x - 3\), then \(\frac{du}{dx} = 7\)</p>
+                                $$ \frac{dy}{dx} = 7e^{7x - 3} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 7x - 3\), then \(\frac{du}{dx} = 7\)</p>
-                        $$ \frac{dy}{dx} = 7e^{7x - 3} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 12 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">12.</h3>
-                <p class="question-body-text">\(y = e^{x^2 - 4x + 1}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 12 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{x^2 - 4x + 1}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^2 - 4x + 1\), then \(\frac{du}{dx} = 2x - 4\)</p>
+                                $$ \frac{dy}{dx} = (2x - 4)e^{x^2 - 4x + 1} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^2 - 4x + 1\), then \(\frac{du}{dx} = 2x - 4\)</p>
-                        $$ \frac{dy}{dx} = (2x - 4)e^{x^2 - 4x + 1} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 13 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">13.</h3>
-                <p class="question-body-text">\(y = e^{x^5 - x^2 + 3}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 13 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{x^5 - x^2 + 3}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^5 - x^2 + 3\), then \(\frac{du}{dx} = 5x^4 - 2x\)</p>
+                                $$ \frac{dy}{dx} = (5x^4 - 2x)e^{x^5 - x^2 + 3} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^5 - x^2 + 3\), then \(\frac{du}{dx} = 5x^4 - 2x\)</p>
-                        $$ \frac{dy}{dx} = (5x^4 - 2x)e^{x^5 - x^2 + 3} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 14 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">14.</h3>
-                <p class="question-body-text">\(y = e^{2x^3 - x + 4}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 14 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{2x^3 - x + 4}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 2x^3 - x + 4\), then \(\frac{du}{dx} = 6x^2 - 1\)</p>
+                                $$ \frac{dy}{dx} = (6x^2 - 1)e^{2x^3 - x + 4} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 2x^3 - x + 4\), then \(\frac{du}{dx} = 6x^2 - 1\)</p>
-                        $$ \frac{dy}{dx} = (6x^2 - 1)e^{2x^3 - x + 4} $$
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ol>
         </section>
 
         <section class="mb-12">
@@ -304,101 +322,109 @@
             </h2>
             <p class="mb-4">Use the examples above and your understanding of the chain rule to differentiate:</p>
 
-            <!-- Question 15 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">15.</h3>
-                <p class="question-body-text">\(y = (5x^2 + 4)^3\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+            <ol start="15">
+                <!-- Question 15 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (5x^2 + 4)^3\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 5x^2 + 4\), then \(\frac{du}{dx} = 10x\)</p>
+                                $$ \frac{dy}{dx} = 3(5x^2 + 4)^2 \cdot 10x = 30x(5x^2 + 4)^2 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 5x^2 + 4\), then \(\frac{du}{dx} = 10x\)</p>
-                        $$ \frac{dy}{dx} = 3(5x^2 + 4)^2 \cdot 10x = 30x(5x^2 + 4)^2 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 16 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">16.</h3>
-                <p class="question-body-text">\(y = e^{x^2 + 4x + 2}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 16 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{x^2 + 4x + 2}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^2 + 4x + 2\), then \(\frac{du}{dx} = 2x + 4\)</p>
+                                $$ \frac{dy}{dx} = (2x + 4)e^{x^2 + 4x + 2} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^2 + 4x + 2\), then \(\frac{du}{dx} = 2x + 4\)</p>
-                        $$ \frac{dy}{dx} = (2x + 4)e^{x^2 + 4x + 2} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 17 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">17.</h3>
-                <p class="question-body-text">\(y = (2x^3 - x^2 + x)^6\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 17 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (2x^3 - x^2 + x)^6\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 2x^3 - x^2 + x\), then \(\frac{du}{dx} = 6x^2 - 2x + 1\)</p>
+                                $$ \frac{dy}{dx} = 6(2x^3 - x^2 + x)^5 (6x^2 - 2x + 1) $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 2x^3 - x^2 + x\), then \(\frac{du}{dx} = 6x^2 - 2x + 1\)</p>
-                        $$ \frac{dy}{dx} = 6(2x^3 - x^2 + x)^5 (6x^2 - 2x + 1) $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 18 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">18.</h3>
-                <p class="question-body-text">\(y = e^{4x^3 - x^2 + x}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 18 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{4x^3 - x^2 + x}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 4x^3 - x^2 + x\), then \(\frac{du}{dx} = 12x^2 - 2x + 1\)</p>
+                                $$ \frac{dy}{dx} = (12x^2 - 2x + 1)e^{4x^3 - x^2 + x} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 4x^3 - x^2 + x\), then \(\frac{du}{dx} = 12x^2 - 2x + 1\)</p>
-                        $$ \frac{dy}{dx} = (12x^2 - 2x + 1)e^{4x^3 - x^2 + x} $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 19 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">19.</h3>
-                <p class="question-body-text">\(y = (3x^2 + 1)^5\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 19 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = (3x^2 + 1)^5\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = 3x^2 + 1\), then \(\frac{du}{dx} = 6x\)</p>
+                                $$ \frac{dy}{dx} = 5(3x^2 + 1)^4 \cdot 6x = 30x(3x^2 + 1)^4 $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = 3x^2 + 1\), then \(\frac{du}{dx} = 6x\)</p>
-                        $$ \frac{dy}{dx} = 5(3x^2 + 1)^4 \cdot 6x = 30x(3x^2 + 1)^4 $$
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 20 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">20.</h3>
-                <p class="question-body-text">\(y = e^{x^4 + 5x}\)</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 20 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">\(y = e^{x^4 + 5x}\)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Let \(u = x^4 + 5x\), then \(\frac{du}{dx} = 4x^3 + 5\)</p>
+                                $$ \frac{dy}{dx} = (4x^3 + 5)e^{x^4 + 5x} $$
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <p>Let \(u = x^4 + 5x\), then \(\frac{du}{dx} = 4x^3 + 5\)</p>
-                        $$ \frac{dy}{dx} = (4x^3 + 5)e^{x^4 + 5x} $$
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ol>
         </section>
 
     </div>
@@ -435,14 +461,17 @@
             // Adjust max-height for smooth transition
             if (content.classList.contains('expanded')) {
                 // When expanding, set max-height to its scrollHeight to reveal full content
-                content.style.maxHeight = content.scrollHeight + "px";
-                // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
                 try {
                     if (typeof MathJax !== 'undefined') {
-                        MathJax.typesetPromise([content]);
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
                     }
                 } catch (error) {
                     console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
                 }
             } else {
                 // When collapsing, reset max-height to null (or 0)
