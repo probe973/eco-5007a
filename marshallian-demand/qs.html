@@ -29,298 +29,306 @@
         </header>
 
         <section class="mb-12">
-            <!-- Question 1 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">1.</h3>
-                <p class="question-body-text">Agent $A$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.4}y^{0.6}$. Suppose $A$'s income is £300, the price of good $x$ is £10, and the price of good $y$ is £15. Use the Lagrangian method to find $A$'s Marshallian demand for $x$ and $y$ (i.e., calculate the specific quantities consumed).</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+            <ol>
+                <!-- Question 1 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Agent $A$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.4}y^{0.6}$. Suppose $A$'s income is £300, the price of good $x$ is £10, and the price of good $y$ is £15. Use the Lagrangian method to find $A$'s Marshallian demand for $x$ and $y$ (i.e., calculate the specific quantities consumed).</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 1</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = x^{0.4}y^{0.6} \\
+                                    &\text{subject to } 10x + 15y = 300
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = x^{0.4}y^{0.6} + \lambda(300 - 10x - 15y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= 0.4x^{-0.6}y^{0.6} - 10\lambda = 0 \implies 0.4x^{-0.6}y^{0.6} = 10\lambda \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= 0.6x^{0.4}y^{-0.4} - 15\lambda = 0 \implies 0.6x^{0.4}y^{-0.4} = 15\lambda \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= 300 - 10x - 15y = 0 \implies 10x + 15y = 300 \quad (3)
+                                \end{align*}
+                                $$
+                                <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
+                                $$ \frac{0.4x^{-0.6}y^{0.6}}{0.6x^{0.4}y^{-0.4}} = \frac{10\lambda}{15\lambda} $$
+                                <p>Simplify the expression:</p>
+                                $$ \frac{2}{3} \frac{y^{0.6}y^{0.4}}{x^{0.6}x^{0.4}} = \frac{2}{3} $$
+                                $$ \frac{2}{3} \frac{y}{x} = \frac{2}{3} $$
+                                <p>Multiply both sides by $\frac{3}{2}$ and $x$:</p>
+                                $$ y = x $$
+                                <p>Substitute $y=x$ into the budget constraint (3):</p>
+                                $$ 10x + 15(x) = 300 $$
+                                $$ 25x = 300 $$
+                                $$ x = \frac{300}{25} $$
+                                $$ x = 12 $$
+                                <p>Since $y=x$, then $y=12$.</p>
+                                <p>Therefore, Agent $A$'s Marshallian demand for $x$ is $12$ units and for $y$ is $12$ units.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 1</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = x^{0.4}y^{0.6} \\
-                            &\text{subject to } 10x + 15y = 300
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = x^{0.4}y^{0.6} + \lambda(300 - 10x - 15y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= 0.4x^{-0.6}y^{0.6} - 10\lambda = 0 \implies 0.4x^{-0.6}y^{0.6} = 10\lambda \quad (1) \\
-                            \frac{\partial L}{\partial y} &= 0.6x^{0.4}y^{-0.4} - 15\lambda = 0 \implies 0.6x^{0.4}y^{-0.4} = 15\lambda \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= 300 - 10x - 15y = 0 \implies 10x + 15y = 300 \quad (3)
-                        \end{align*}
-                        $$
-                        <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
-                        $$ \frac{0.4x^{-0.6}y^{0.6}}{0.6x^{0.4}y^{-0.4}} = \frac{10\lambda}{15\lambda} $$
-                        <p>Simplify the expression:</p>
-                        $$ \frac{2}{3} \frac{y^{0.6}y^{0.4}}{x^{0.6}x^{0.4}} = \frac{2}{3} $$
-                        $$ \frac{2}{3} \frac{y}{x} = \frac{2}{3} $$
-                        <p>Multiply both sides by $\frac{3}{2}$ and $x$:</p>
-                        $$ y = x $$
-                        <p>Substitute $y=x$ into the budget constraint (3):</p>
-                        $$ 10x + 15(x) = 300 $$
-                        $$ 25x = 300 $$
-                        $$ x = \frac{300}{25} $$
-                        $$ x = 12 $$
-                        <p>Since $y=x$, then $y=12$.</p>
-                        <p>Therefore, Agent $A$'s Marshallian demand for $x$ is $12$ units and for $y$ is $12$ units.</p>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 2 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">2.</h3>
-                <p class="question-body-text">Consumer $B$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.25}y^{0.75}$. Suppose $B$'s income is £240, the price of good $x$ is £8, and the price of good $y$ is £4. Use the Lagrangian method to find $B$'s Marshallian demand for $x$ and $y$ (i.e., calculate the specific quantities consumed).</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 2 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Consumer $B$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.25}y^{0.75}$. Suppose $B$'s income is £240, the price of good $x$ is £8, and the price of good $y$ is £4. Use the Lagrangian method to find $B$'s Marshallian demand for $x$ and $y$ (i.e., calculate the specific quantities consumed).</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 2</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = x^{0.25}y^{0.75} \\
+                                    &\text{subject to } 8x + 4y = 240
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = x^{0.25}y^{0.75} + \lambda(240 - 8x - 4y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= 0.25x^{-0.75}y^{0.75} - 8\lambda = 0 \implies 0.25x^{-0.75}y^{0.75} = 8\lambda \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= 0.75x^{0.25}y^{-0.25} - 4\lambda = 0 \implies 0.75x^{0.25}y^{-0.25} = 4\lambda \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= 240 - 8x - 4y = 0 \implies 8x + 4y = 240 \quad (3)
+                                \end{align*}
+                                $$
+                                <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
+                                $$ \frac{0.25x^{-0.75}y^{0.75}}{0.75x^{0.25}y^{-0.25}} = \frac{8\lambda}{4\lambda} $$
+                                <p>Simplify the expression:</p>
+                                $$ \frac{1}{3} \frac{y^{0.75}y^{0.25}}{x^{0.75}x^{0.25}} = 2 $$
+                                $$ \frac{1}{3} \frac{y}{x} = 2 $$
+                                <p>Multiply both sides by $3x$:</p>
+                                $$ y = 6x $$
+                                <p>Substitute $y=6x$ into the budget constraint (3):</p>
+                                $$ 8x + 4(6x) = 240 $$
+                                $$ 8x + 24x = 240 $$
+                                $$ 32x = 240 $$
+                                $$ x = \frac{240}{32} $$
+                                $$ x = 7.5 $$
+                                <p>Since $y=6x$, then $y = 6 \times 7.5 = 45$.</p>
+                                <p>Therefore, Consumer $B$'s Marshallian demand for $x$ is $7.5$ units and for $y$ is $45$ units.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 2</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = x^{0.25}y^{0.75} \\
-                            &\text{subject to } 8x + 4y = 240
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = x^{0.25}y^{0.75} + \lambda(240 - 8x - 4y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= 0.25x^{-0.75}y^{0.75} - 8\lambda = 0 \implies 0.25x^{-0.75}y^{0.75} = 8\lambda \quad (1) \\
-                            \frac{\partial L}{\partial y} &= 0.75x^{0.25}y^{-0.25} - 4\lambda = 0 \implies 0.75x^{0.25}y^{-0.25} = 4\lambda \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= 240 - 8x - 4y = 0 \implies 8x + 4y = 240 \quad (3)
-                        \end{align*}
-                        $$
-                        <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
-                        $$ \frac{0.25x^{-0.75}y^{0.75}}{0.75x^{0.25}y^{-0.25}} = \frac{8\lambda}{4\lambda} $$
-                        <p>Simplify the expression:</p>
-                        $$ \frac{1}{3} \frac{y^{0.75}y^{0.25}}{x^{0.75}x^{0.25}} = 2 $$
-                        $$ \frac{1}{3} \frac{y}{x} = 2 $$
-                        <p>Multiply both sides by $3x$:</p>
-                        $$ y = 6x $$
-                        <p>Substitute $y=6x$ into the budget constraint (3):</p>
-                        $$ 8x + 4(6x) = 240 $$
-                        $$ 8x + 24x = 240 $$
-                        $$ 32x = 240 $$
-                        $$ x = \frac{240}{32} $$
-                        $$ x = 7.5 $$
-                        <p>Since $y=6x$, then $y = 6 \times 7.5 = 45$.</p>
-                        <p>Therefore, Consumer $B$'s Marshallian demand for $x$ is $7.5$ units and for $y$ is $45$ units.</p>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 3 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">3.</h3>
-                <p class="question-body-text">Agent $C$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.9}y^{0.1}$. Let $M$ denote $C$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $C$'s Marshallian demand function for $y$.</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 3 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Agent $C$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{0.9}y^{0.1}$. Let $M$ denote $C$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $C$'s Marshallian demand function for $y$.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 3</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = x^{0.9}y^{0.1} \\
+                                    &\text{subject to } p_x x + p_y y = M
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = x^{0.9}y^{0.1} + \lambda(M - p_x x - p_y y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= 0.9x^{-0.1}y^{0.1} - \lambda p_x = 0 \implies 0.9x^{-0.1}y^{0.1} = \lambda p_x \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= 0.1x^{0.9}y^{-0.9} - \lambda p_y = 0 \implies 0.1x^{0.9}y^{-0.9} = \lambda p_y \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
+                                \end{align*}
+                                $$
+                                <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
+                                $$ \frac{0.9x^{-0.1}y^{0.1}}{0.1x^{0.9}y^{-0.9}} = \frac{\lambda p_x}{\lambda p_y} $$
+                                <p>Simplify the expression:</p>
+                                $$ \frac{0.9}{0.1} \frac{y^{0.1}y^{0.9}}{x^{0.1}x^{0.9}} = \frac{p_x}{p_y} $$
+                                $$ 9 \frac{y}{x} = \frac{p_x}{p_y} $$
+                                <p>Rearrange to express $x$ in terms of $y$ and prices (since we need demand for $y$):</p>
+                                $$ 9y p_y = x p_x $$
+                                $$ x = \frac{9y p_y}{p_x} $$
+                                <p>Substitute this expression for $x$ into the budget constraint (3):</p>
+                                $$ p_x \left(\frac{9y p_y}{p_x}\right) + p_y y = M $$
+                                $$ 9y p_y + p_y y = M $$
+                                $$ 10y p_y = M $$
+                                $$ y = \frac{M}{10p_y} $$
+                                <p>Therefore, Agent $C$'s Marshallian demand function for $y$ is $y = \frac{M}{10p_y}$.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 3</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = x^{0.9}y^{0.1} \\
-                            &\text{subject to } p_x x + p_y y = M
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = x^{0.9}y^{0.1} + \lambda(M - p_x x - p_y y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= 0.9x^{-0.1}y^{0.1} - \lambda p_x = 0 \implies 0.9x^{-0.1}y^{0.1} = \lambda p_x \quad (1) \\
-                            \frac{\partial L}{\partial y} &= 0.1x^{0.9}y^{-0.9} - \lambda p_y = 0 \implies 0.1x^{0.9}y^{-0.9} = \lambda p_y \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
-                        \end{align*}
-                        $$
-                        <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
-                        $$ \frac{0.9x^{-0.1}y^{0.1}}{0.1x^{0.9}y^{-0.9}} = \frac{\lambda p_x}{\lambda p_y} $$
-                        <p>Simplify the expression:</p>
-                        $$ \frac{0.9}{0.1} \frac{y^{0.1}y^{0.9}}{x^{0.1}x^{0.9}} = \frac{p_x}{p_y} $$
-                        $$ 9 \frac{y}{x} = \frac{p_x}{p_y} $$
-                        <p>Rearrange to express $x$ in terms of $y$ and prices (since we need demand for $y$):</p>
-                        $$ 9y p_y = x p_x $$
-                        $$ x = \frac{9y p_y}{p_x} $$
-                        <p>Substitute this expression for $x$ into the budget constraint (3):</p>
-                        $$ p_x \left(\frac{9y p_y}{p_x}\right) + p_y y = M $$
-                        $$ 9y p_y + p_y y = M $$
-                        $$ 10y p_y = M $$
-                        $$ y = \frac{M}{10p_y} $$
-                        <p>Therefore, Agent $C$'s Marshallian demand function for $y$ is $y = \frac{M}{10p_y}$.</p>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 4 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">4.</h3>
-                <p class="question-body-text">Consumer $D$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{a}y^{b}$, where $a$ and $b$ are positive constants. Let $M$ denote $D$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $D$'s Marshallian demand function for $x$.</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 4 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Consumer $D$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x^{a}y^{b}$, where $a$ and $b$ are positive constants. Let $M$ denote $D$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $D$'s Marshallian demand function for $x$.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 4</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = x^{a}y^{b} \\
+                                    &\text{subject to } p_x x + p_y y = M
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = x^{a}y^{b} + \lambda(M - p_x x - p_y y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= ax^{a-1}y^{b} - \lambda p_x = 0 \implies ax^{a-1}y^{b} = \lambda p_x \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= bx^{a}y^{b-1} - \lambda p_y = 0 \implies bx^{a}y^{b-1} = \lambda p_y \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
+                                \end{align*}
+                                $$
+                                <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
+                                $$ \frac{ax^{a-1}y^{b}}{bx^{a}y^{b-1}} = \frac{\lambda p_x}{\lambda p_y} $$
+                                <p>Simplify the expression:</p>
+                                $$ \frac{a}{b} \frac{y^{b}y^{1}}{x^{a}x^{1-a}} = \frac{p_x}{p_y} $$
+                                $$ \frac{a}{b} \frac{y}{x} = \frac{p_x}{p_y} $$
+                                <p>Rearrange to express $y$ in terms of $x$ and prices:</p>
+                                $$ ay p_y = bx p_x $$
+                                $$ y = \frac{b p_x x}{a p_y} $$
+                                <p>Substitute this expression for $y$ into the budget constraint (3):</p>
+                                $$ p_x x + p_y \left(\frac{b p_x x}{a p_y}\right) = M $$
+                                $$ p_x x + \frac{b p_x x}{a} = M $$
+                                <p>Factor out $p_x x$:</p>
+                                $$ p_x x \left(1 + \frac{b}{a}\right) = M $$
+                                $$ p_x x \left(\frac{a+b}{a}\right) = M $$
+                                <p>Solve for $x$:</p>
+                                $$ x = \frac{M a}{p_x (a+b)} $$
+                                <p>Therefore, Consumer $D$'s Marshallian demand function for $x$ is $x = \frac{aM}{(a+b)p_x}$.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 4</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = x^{a}y^{b} \\
-                            &\text{subject to } p_x x + p_y y = M
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = x^{a}y^{b} + \lambda(M - p_x x - p_y y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= ax^{a-1}y^{b} - \lambda p_x = 0 \implies ax^{a-1}y^{b} = \lambda p_x \quad (1) \\
-                            \frac{\partial L}{\partial y} &= bx^{a}y^{b-1} - \lambda p_y = 0 \implies bx^{a}y^{b-1} = \lambda p_y \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
-                        \end{align*}
-                        $$
-                        <p>Divide equation (1) by equation (2) to eliminate $\lambda$:</p>
-                        $$ \frac{ax^{a-1}y^{b}}{bx^{a}y^{b-1}} = \frac{\lambda p_x}{\lambda p_y} $$
-                        <p>Simplify the expression:</p>
-                        $$ \frac{a}{b} \frac{y^{b}y^{1}}{x^{a}x^{1-a}} = \frac{p_x}{p_y} $$
-                        $$ \frac{a}{b} \frac{y}{x} = \frac{p_x}{p_y} $$
-                        <p>Rearrange to express $y$ in terms of $x$ and prices:</p>
-                        $$ ay p_y = bx p_x $$
-                        $$ y = \frac{b p_x x}{a p_y} $$
-                        <p>Substitute this expression for $y$ into the budget constraint (3):</p>
-                        $$ p_x x + p_y \left(\frac{b p_x x}{a p_y}\right) = M $$
-                        $$ p_x x + \frac{b p_x x}{a} = M $$
-                        <p>Factor out $p_x x$:</p>
-                        $$ p_x x \left(1 + \frac{b}{a}\right) = M $$
-                        $$ p_x x \left(\frac{a+b}{a}\right) = M $$
-                        <p>Solve for $x$:</p>
-                        $$ x = \frac{M a}{p_x (a+b)} $$
-                        <p>Therefore, Consumer $D$'s Marshallian demand function for $x$ is $x = \frac{aM}{(a+b)p_x}$.</p>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 5 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">5.</h3>
-                <p class="question-body-text">Agent $E$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x + \ln(y)$. Let $M$ denote $E$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $E$'s Marshallian demand functions for $x$ and $y$. Assume the consumer consumes positive amounts of both $x$ and $y$.</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 5 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Agent $E$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = x + \ln(y)$. Let $M$ denote $E$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $E$'s Marshallian demand functions for $x$ and $y$. Assume the consumer consumes positive amounts of both $x$ and $y$.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 5</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = x + \ln(y) \\
+                                    &\text{subject to } p_x x + p_y y = M
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = x + \ln(y) + \lambda(M - p_x x - p_y y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= 1 - \lambda p_x = 0 \implies 1 = \lambda p_x \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= \frac{1}{y} - \lambda p_y = 0 \implies \frac{1}{y} = \lambda p_y \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
+                                \end{align*}
+                                $$
+                                <p>From equation (1), solve for $\lambda$:</p>
+                                $$ \lambda = \frac{1}{p_x} $$
+                                <p>Substitute this expression for $\lambda$ into equation (2):</p>
+                                $$ \frac{1}{y} = \left(\frac{1}{p_x}\right) p_y $$
+                                $$ \frac{1}{y} = \frac{p_y}{p_x} $$
+                                <p>Solve for $y$:</p>
+                                $$ y = \frac{p_x}{p_y} $$
+                                <p>Substitute this expression for $y$ into the budget constraint (3):</p>
+                                $$ p_x x + p_y \left(\frac{p_x}{p_y}\right) = M $$
+                                $$ p_x x + p_x = M $$
+                                <p>Solve for $x$:</p>
+                                $$ p_x x = M - p_x $$
+                                $$ x = \frac{M - p_x}{p_x} $$
+                                <p>Therefore, Agent $E$'s Marshallian demand functions are:</p>
+                                $$ x = \frac{M - p_x}{p_x} $$
+                                $$ y = \frac{p_x}{p_y} $$
+                                <p>(Note: For $x > 0$, it must be that $M > p_x$.)</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 5</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = x + \ln(y) \\
-                            &\text{subject to } p_x x + p_y y = M
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = x + \ln(y) + \lambda(M - p_x x - p_y y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= 1 - \lambda p_x = 0 \implies 1 = \lambda p_x \quad (1) \\
-                            \frac{\partial L}{\partial y} &= \frac{1}{y} - \lambda p_y = 0 \implies \frac{1}{y} = \lambda p_y \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
-                        \end{align*}
-                        $$
-                        <p>From equation (1), solve for $\lambda$:</p>
-                        $$ \lambda = \frac{1}{p_x} $$
-                        <p>Substitute this expression for $\lambda$ into equation (2):</p>
-                        $$ \frac{1}{y} = \left(\frac{1}{p_x}\right) p_y $$
-                        $$ \frac{1}{y} = \frac{p_y}{p_x} $$
-                        <p>Solve for $y$:</p>
-                        $$ y = \frac{p_x}{p_y} $$
-                        <p>Substitute this expression for $y$ into the budget constraint (3):</p>
-                        $$ p_x x + p_y \left(\frac{p_x}{p_y}\right) = M $$
-                        $$ p_x x + p_x = M $$
-                        <p>Solve for $x$:</p>
-                        $$ p_x x = M - p_x $$
-                        $$ x = \frac{M - p_x}{p_x} $$
-                        <p>Therefore, Agent $E$'s Marshallian demand functions are:</p>
-                        $$ x = \frac{M - p_x}{p_x} $$
-                        $$ y = \frac{p_x}{p_y} $$
-                        <p>(Note: For $x > 0$, it must be that $M > p_x$.)</p>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- Question 6 -->
-            <div class="question-block mb-8">
-                <h3 class="text-xl font-semibold mb-2">6.</h3>
-                <p class="question-body-text">Consumer $F$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = xy + x$. Let $M$ denote $F$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $F$'s Marshallian demand functions for $x$ and $y$. Assume the consumer consumes positive amounts of both $x$ and $y$.</p>
-                <div class="solution-container">
-                    <div class="solution-header" onclick="toggleSolution(this)">
-                        <span>Show Solution</span>
-                        <i class="fas fa-chevron-right icon"></i>
+                <!-- Question 6 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Consumer $F$'s preferences over goods $x$ and $y$ can be represented by the utility function $U(x,y) = xy + x$. Let $M$ denote $F$'s income, and $p_x$ and $p_y$ denote the prices of the respective goods. Use the Lagrangian method to find $F$'s Marshallian demand functions for $x$ and $y$. Assume the consumer consumes positive amounts of both $x$ and $y$.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <h4 class="text-lg font-semibold mb-2">Solution to 6</h4>
+                                <p>The utility maximization problem is:</p>
+                                $$
+                                \begin{align*}
+                                    &\max_{x,y} U(x,y) = xy + x = x(y+1) \\
+                                    &\text{subject to } p_x x + p_y y = M
+                                \end{align*}
+                                $$
+                                <p>The Lagrangian function is:</p>
+                                <p>$L(x, y, \lambda) = xy + x + \lambda(M - p_x x - p_y y)$</p>
+                                <p>First-Order Conditions (FOCs):</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial L}{\partial x} &= y + 1 - \lambda p_x = 0 \implies y + 1 = \lambda p_x \quad (1) \\
+                                    \frac{\partial L}{\partial y} &= x - \lambda p_y = 0 \implies x = \lambda p_y \quad (2) \\
+                                    \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
+                                \end{align*}
+                                $$
+                                <p>From equation (2), solve for $\lambda$:</p>
+                                $$ \lambda = \frac{x}{p_y} $$
+                                <p>Substitute this expression for $\lambda$ into equation (1):</p>
+                                $$ y + 1 = \left(\frac{x}{p_y}\right) p_x $$
+                                $$ y + 1 = \frac{p_x x}{p_y} $$
+                                <p>Rearrange to express $p_x x$:</p>
+                                $$ p_x x = p_y (y+1) $$
+                                $$ p_x x = p_y y + p_y $$
+                                <p>Substitute this expression for $p_x x$ into the budget constraint (3):</p>
+                                $$ (p_y y + p_y) + p_y y = M $$
+                                $$ 2p_y y + p_y = M $$
+                                <p>Solve for $y$:</p>
+                                $$ 2p_y y = M - p_y $$
+                                $$ y = \frac{M - p_y}{2p_y} $$
+                                <p>Now, substitute this expression for $y$ back into the equation for $p_x x$:</p>
+                                $$ p_x x = p_y \left(\frac{M - p_y}{2p_y} + 1\right) $$
+                                $$ p_x x = p_y \left(\frac{M - p_y + 2p_y}{2p_y}\right) $$
+                                $$ p_x x = \frac{M + p_y}{2} $$
+                                <p>Solve for $x$:</p>
+                                $$ x = \frac{M + p_y}{2p_x} $$
+                                <p>Therefore, Consumer $F$'s Marshallian demand functions are:</p>
+                                $$ x = \frac{M + p_y}{2p_x} $$
+                                $$ y = \frac{M - p_y}{2p_y} $$
+                                <p>(Note: For $y > 0$, it must be that $M > p_y$.)</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="solution-content">
-                        <h4 class="text-lg font-semibold mb-2">Solution to 6</h4>
-                        <p>The utility maximization problem is:</p>
-                        $$
-                        \begin{align*}
-                            &\max_{x,y} U(x,y) = xy + x = x(y+1) \\
-                            &\text{subject to } p_x x + p_y y = M
-                        \end{align*}
-                        $$
-                        <p>The Lagrangian function is:</p>
-                        <p>$L(x, y, \lambda) = xy + x + \lambda(M - p_x x - p_y y)$</p>
-                        <p>First-Order Conditions (FOCs):</p>
-                        $$
-                        \begin{align*}
-                            \frac{\partial L}{\partial x} &= y + 1 - \lambda p_x = 0 \implies y + 1 = \lambda p_x \quad (1) \\
-                            \frac{\partial L}{\partial y} &= x - \lambda p_y = 0 \implies x = \lambda p_y \quad (2) \\
-                            \frac{\partial L}{\partial \lambda} &= M - p_x x - p_y y = 0 \implies p_x x + p_y y = M \quad (3)
-                        \end{align*}
-                        $$
-                        <p>From equation (2), solve for $\lambda$:</p>
-                        $$ \lambda = \frac{x}{p_y} $$
-                        <p>Substitute this expression for $\lambda$ into equation (1):</p>
-                        $$ y + 1 = \left(\frac{x}{p_y}\right) p_x $$
-                        $$ y + 1 = \frac{p_x x}{p_y} $$
-                        <p>Rearrange to express $p_x x$:</p>
-                        $$ p_x x = p_y (y+1) $$
-                        $$ p_x x = p_y y + p_y $$
-                        <p>Substitute this expression for $p_x x$ into the budget constraint (3):</p>
-                        $$ (p_y y + p_y) + p_y y = M $$
-                        $$ 2p_y y + p_y = M $$
-                        <p>Solve for $y$:</p>
-                        $$ 2p_y y = M - p_y $$
-                        $$ y = \frac{M - p_y}{2p_y} $$
-                        <p>Now, substitute this expression for $y$ back into the equation for $p_x x$:</p>
-                        $$ p_x x = p_y \left(\frac{M - p_y}{2p_y} + 1\right) $$
-                        $$ p_x x = p_y \left(\frac{M - p_y + 2p_y}{2p_y}\right) $$
-                        $$ p_x x = \frac{M + p_y}{2} $$
-                        <p>Solve for $x$:</p>
-                        $$ x = \frac{M + p_y}{2p_x} $$
-                        <p>Therefore, Consumer $F$'s Marshallian demand functions are:</p>
-                        $$ x = \frac{M + p_y}{2p_x} $$
-                        $$ y = \frac{M - p_y}{2p_y} $$
-                        <p>(Note: For $y > 0$, it must be that $M > p_y$.)</p>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ol>
         </section>
 
     </div>
@@ -357,14 +365,17 @@
             // Adjust max-height for smooth transition
             if (content.classList.contains('expanded')) {
                 // When expanding, set max-height to its scrollHeight to reveal full content
-                content.style.maxHeight = content.scrollHeight + "px";
-                // IMPORTANT: Tell MathJax to typeset the content when it becomes visible
                 try {
                     if (typeof MathJax !== 'undefined') {
-                        MathJax.typesetPromise([content]);
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
                     }
                 } catch (error) {
                     console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
                 }
             } else {
                 // When collapsing, reset max-height to null (or 0)
