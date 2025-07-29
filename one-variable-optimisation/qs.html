@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimisation (Single Variable Functions)</title>
+    <!-- Font Awesome (for icons in navbar and solution toggles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to your shared stylesheet (relative path from this folder) -->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!-- MathJax configuration -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax library -->
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="content-container">
+        <!-- Header Placeholder -->
+        <div id="header-placeholder"></div>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Differentiation Practice
+            </h2>
+            <p class="mb-4">For each of the functions below, find the first and second derivative:</p>
+
+            <ol>
+                <!-- Question 1 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 5x^3 + 2x^2 - 8x + 3$</p>
+                        <p class="question-body-text">Find $\frac{dy}{dx}$ and $\frac{d^2y}{dx^2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                $$ \frac{dy}{dx} = 15x^2 + 4x - 8 $$
+                                $$ \frac{d^2y}{dx^2} = 30x + 4 $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 2 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$m = 4x - 3 + \frac{2}{x} - \frac{4}{x^2}$</p>
+                        <p class="question-body-text">Find $\frac{dm}{dx}$ and $\frac{d^2m}{dx^2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$m = 4x - 3 + 2x^{-1} - 4x^{-2}$</p>
+                                $$ \frac{dm}{dx} = 4 - 2x^{-2} + 8x^{-3} = 4 - \frac{2}{x^2} + \frac{8}{x^3} $$
+                                $$ \frac{d^2m}{dx^2} = 4x^{-3} - 24x^{-4} = \frac{4}{x^3} - \frac{24}{x^4} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 3 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$f(t) = 24 + 4\sqrt{t}$</p>
+                        <p class="question-body-text">Find $f'(t)$ and $f''(t)$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$f(t) = 24 + 4t^{1/2}$</p>
+                                $$ f'(t) = 2t^{-1/2} = \frac{2}{\sqrt{t}} $$
+                                $$ f''(t) = -t^{-3/2} = -\frac{1}{t^{3/2}} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 4 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$P = t^3(5t^3 - 4t^{-3/2})$</p>
+                        <p class="question-body-text">Find $\frac{dP}{dt}$ and $\frac{d^2P}{dt^2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$P = 5t^{6} - 4t^{3/2}$</p>
+                                $$ \frac{dP}{dt} = 30t^5 - 6t^{1/2} = 30t^5 - 6\sqrt{t} $$
+                                $$ \frac{d^2P}{dt^2} = 150t^4 - 3t^{-1/2} = 150t^4 - \frac{3}{\sqrt{t}} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 5 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$g(x) = 3x^5 - 4x^2 + \frac{7}{x}$ (domain: $x > 0$)</p>
+                        <p class="question-body-text">Find $\frac{dg}{dx}$ and $\frac{d^2g}{dx^2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$g(x) = 3x^5 - 4x^2 + 7x^{-1}$</p>
+                                $$ \frac{dg}{dx} = 15x^4 - 8x - 7x^{-2} = 15x^4 - 8x - \frac{7}{x^2} $$
+                                $$ \frac{d^2g}{dx^2} = 60x^3 - 8 + 14x^{-3} = 60x^3 - 8 + \frac{14}{x^3} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 6 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 10x^4 + 6x^{1/3} - \frac{3}{x^2}$</p>
+                        <p class="question-body-text">Find $\frac{dy}{dx}$ and $\frac{d^2y}{dx^2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$y = 10x^4 + 6x^{1/3} - 3x^{-2}$</p>
+                                $$ \frac{dy}{dx} = 40x^3 + 2x^{-2/3} + 6x^{-3} = 40x^3 + \frac{2}{x^{2/3}} + \frac{6}{x^3} $$
+                                $$ \frac{d^2y}{dx^2} = 120x^2 - \frac{4}{3}x^{-5/3} - 18x^{-4} = 120x^2 - \frac{4}{3x^{5/3}} - \frac{18}{x^4} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Stationary Points
+            </h2>
+            <p class="mb-4">A point is stationary if its gradient is equal to zero, i.e. $\frac{dy}{dx} = 0$.</p>
+            <p class="mb-4">Substituting the stationary point into the second derivative of the function determines whether the stationary point is a local minimum, local maximum, or a point of inflection:</p>
+            <ul class="list-disc list-inside mb-4 pl-4">
+                <li>$\frac{d^2y}{dx^2} < 0$ &nbsp; $\Rightarrow$ &nbsp; <strong>Local maximum</strong></li>
+                <li>$\frac{d^2y}{dx^2} > 0$ &nbsp; $\Rightarrow$ &nbsp; <strong>Local minimum</strong></li>
+                <li>$\frac{d^2y}{dx^2} = 0$ <strong>and</strong> $\frac{d^3y}{dx^3} \neq 0$ &nbsp; $\Rightarrow$ &nbsp; <strong>Point of inflection</strong></li>
+            </ul>
+            <p class="mb-4">For each function below:</p>
+            <ul class="list-disc list-inside mb-4 pl-4">
+                <li>Find the first derivative</li>
+                <li>Solve where the first derivative equals zero, and find the coordinates of the stationary point(s)</li>
+                <li>Find the second derivative</li>
+                <li>Substitute result(s) into the second derivative to determine the nature of the stationary point(s)</li>
+                <li>Plot the functions using an online graphing tool (e.g. Desmos)</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Functions:</h3>
+            <ol>
+                <!-- Question 7 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x^2 + 8x - 9$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 2x + 8$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 2x + 8 = 0 \implies x = -4 $$
+                                        Substitute $x=-4$ into $y$:
+                                        $$ y = (-4)^2 + 8(-4) - 9 = 16 - 32 - 9 = -25 $$
+                                        Stationary point: $(-4, -25)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 2$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x=-4$: $\frac{d^2y}{dx^2} = 2$.
+                                        Since $\frac{d^2y}{dx^2} = 2 > 0$, the stationary point $(-4, -25)$ is a <strong>local minimum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 8 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 2x^3 + 6x^2 - 90x - 2$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 6x^2 + 12x - 90$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 6x^2 + 12x - 90 = 0 $$
+                                        $$ x^2 + 2x - 15 = 0 \quad \text{(Divide by 6)} $$
+                                        $$ (x+5)(x-3) = 0 $$
+                                        $x = -5$ or $x = 3$.
+                                        For $x = -5$: $y = 2(-5)^3 + 6(-5)^2 - 90(-5) - 2 = -250 + 150 + 450 - 2 = 348$. Stationary point: $(-5, 348)$.
+                                        For $x = 3$: $y = 2(3)^3 + 6(3)^2 - 90(3) - 2 = 54 + 54 - 270 - 2 = -164$. Stationary point: $(3, -164)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 12x + 12$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = -5$: $\frac{d^2y}{dx^2} = 12(-5) + 12 = -48$. Since $-48 < 0$, $(-5, 348)$ is a <strong>local maximum</strong>.
+                                        At $x = 3$: $\frac{d^2y}{dx^2} = 12(3) + 12 = 48$. Since $48 > 0$, $(3, -164)$ is a <strong>local minimum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 9 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 4x^{3/2} - x^2$ (domain: $x > 0$)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 6x^{1/2} - 2x = 6\sqrt{x} - 2x$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 6\sqrt{x} - 2x = 0 \implies 2\sqrt{x}(3 - \sqrt{x}) = 0 $$
+                                        Given $x > 0$, we have $3 - \sqrt{x} = 0 \implies \sqrt{x}=3 \implies x=9$.
+                                        For $x = 9$: $y = 4(9)^{3/2} - (9)^2 = 4(27) - 81 = 108 - 81 = 27$. Stationary point: $(9, 27)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 3x^{-1/2} - 2 = \frac{3}{\sqrt{x}} - 2$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = 9$: $\frac{d^2y}{dx^2} = \frac{3}{\sqrt{9}} - 2 = 1 - 2 = -1$.
+                                        Since $-1 < 0$, the stationary point $(9, 27)$ is a <strong>local maximum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 10 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x \ln x$ (use the product rule)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> Using product rule ($u=x, v=\ln x$), $\frac{dy}{dx} = (1)(\ln x) + (x)(\frac{1}{x}) = \ln x + 1$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ \ln x + 1 = 0 \implies \ln x = -1 \implies x = e^{-1} = \frac{1}{e} $$
+                                        For $x = \frac{1}{e}$: $y = \frac{1}{e} \ln(\frac{1}{e}) = \frac{1}{e}(-1) = -\frac{1}{e}$. Stationary point: $(\frac{1}{e}, -\frac{1}{e})$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = \frac{1}{x}$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = \frac{1}{e}$: $\frac{d^2y}{dx^2} = \frac{1}{1/e} = e$.
+                                        Since $e > 0$, the stationary point $(\frac{1}{e}, -\frac{1}{e})$ is a <strong>local minimum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 11 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 6x^{2/3} - 4x$ (domain: $x > 0$)</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 4x^{-1/3} - 4 = \frac{4}{\sqrt[3]{x}} - 4$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ \frac{4}{\sqrt[3]{x}} - 4 = 0 \implies \frac{4}{\sqrt[3]{x}} = 4 \implies \sqrt[3]{x} = 1 \implies x = 1 $$
+                                        For $x = 1$: $y = 6(1)^{2/3} - 4(1) = 6 - 4 = 2$. Stationary point: $(1, 2)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = -\frac{4}{3}x^{-4/3} = -\frac{4}{3x^{4/3}}$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = 1$: $\frac{d^2y}{dx^2} = -\frac{4}{3(1)^{4/3}} = -\frac{4}{3}$.
+                                        Since $-\frac{4}{3} < 0$, the stationary point $(1, 2)$ is a <strong>local maximum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 12 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x^3 - 3x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 3x^2 - 3$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 3x^2 - 3 = 0 \implies x^2 = 1 \implies x = \pm 1 $$
+                                        For $x = 1$: $y = (1)^3 - 3(1) = -2$. Stationary point: $(1, -2)$.
+                                        For $x = -1$: $y = (-1)^3 - 3(-1) = 2$. Stationary point: $(-1, 2)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 6x$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = 1$: $\frac{d^2y}{dx^2} = 6(1) = 6$. Since $6 > 0$, $(1, -2)$ is a <strong>local minimum</strong>.
+                                        At $x = -1$: $\frac{d^2y}{dx^2} = 6(-1) = -6$. Since $-6 < 0$, $(-1, 2)$ is a <strong>local maximum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 13 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x + \frac{3}{x} + 2$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $y = x + 3x^{-1} + 2 \implies \frac{dy}{dx} = 1 - 3x^{-2} = 1 - \frac{3}{x^2}$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 1 - \frac{3}{x^2} = 0 \implies x^2 = 3 \implies x = \pm\sqrt{3} $$
+                                        For $x = \sqrt{3}$: $y = \sqrt{3} + \frac{3}{\sqrt{3}} + 2 = \sqrt{3} + \sqrt{3} + 2 = 2\sqrt{3} + 2$. Stationary point: $(\sqrt{3}, 2\sqrt{3} + 2)$.
+                                        For $x = -\sqrt{3}$: $y = -\sqrt{3} + \frac{3}{-\sqrt{3}} + 2 = -\sqrt{3} - \sqrt{3} + 2 = -2\sqrt{3} + 2$. Stationary point: $(-\sqrt{3}, -2\sqrt{3} + 2)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 6x^{-3} = \frac{6}{x^3}$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = \sqrt{3}$: $\frac{d^2y}{dx^2} = \frac{6}{(\sqrt{3})^3} = \frac{6}{3\sqrt{3}} = \frac{2}{\sqrt{3}}$. Since $\frac{2}{\sqrt{3}} > 0$, $(\sqrt{3}, 2\sqrt{3} + 2)$ is a <strong>local minimum</strong>.
+                                        At $x = -\sqrt{3}$: $\frac{d^2y}{dx^2} = \frac{6}{(-\sqrt{3})^3} = -\frac{2}{\sqrt{3}}$. Since $-\frac{2}{\sqrt{3}} < 0$, $(-\sqrt{3}, -2\sqrt{3} + 2)$ is a <strong>local maximum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 14 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x^3 - 6x^2 + 9x + 5$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 3x^2 - 12x + 9$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 3x^2 - 12x + 9 = 0 \implies x^2 - 4x + 3 = 0 \implies (x-1)(x-3) = 0 $$
+                                        $x = 1$ or $x = 3$.
+                                        For $x = 1$: $y = (1)^3 - 6(1)^2 + 9(1) + 5 = 1 - 6 + 9 + 5 = 9$. Stationary point: $(1, 9)$.
+                                        For $x = 3$: $y = (3)^3 - 6(3)^2 + 9(3) + 5 = 27 - 54 + 27 + 5 = 5$. Stationary point: $(3, 5)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 6x - 12$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = 1$: $\frac{d^2y}{dx^2} = 6(1) - 12 = -6$. Since $-6 < 0$, $(1, 9)$ is a <strong>local maximum</strong>.
+                                        At $x = 3$: $\frac{d^2y}{dx^2} = 6(3) - 12 = 6$. Since $6 > 0$, $(3, 5)$ is a <strong>local minimum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 15 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x^4 - 8x^2 + 5$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ul class="list-disc list-inside pl-4">
+                                    <li><strong>First Derivative:</strong> $\frac{dy}{dx} = 4x^3 - 16x$</li>
+                                    <li><strong>Stationary Point(s):</strong> Set $\frac{dy}{dx} = 0$.
+                                        $$ 4x^3 - 16x = 0 \implies 4x(x^2 - 4) = 0 \implies 4x(x-2)(x+2) = 0 $$
+                                        $x = 0$, $x = 2$, or $x = -2$.
+                                        For $x = 0$: $y = (0)^4 - 8(0)^2 + 5 = 5$. Stationary point: $(0, 5)$.
+                                        For $x = 2$: $y = (2)^4 - 8(2)^2 + 5 = 16 - 32 + 5 = -11$. Stationary point: $(2, -11)$.
+                                        For $x = -2$: $y = (-2)^4 - 8(-2)^2 + 5 = 16 - 32 + 5 = -11$. Stationary point: $(-2, -11)$.
+                                    </li>
+                                    <li><strong>Second Derivative:</strong> $\frac{d^2y}{dx^2} = 12x^2 - 16$</li>
+                                    <li><strong>Nature of Stationary Point(s):</strong>
+                                        At $x = 0$: $\frac{d^2y}{dx^2} = 12(0)^2 - 16 = -16$. Since $-16 < 0$, $(0, 5)$ is a <strong>local maximum</strong>.
+                                        At $x = 2$: $\frac{d^2y}{dx^2} = 12(2)^2 - 16 = 32$. Since $32 > 0$, $(2, -11)$ is a <strong>local minimum</strong>.
+                                        At $x = -2$: $\frac{d^2y}{dx^2} = 12(-2)^2 - 16 = 32$. Since $32 > 0$, $(-2, -11)$ is a <strong>local minimum</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Optimisation: Open-Top Box Problem
+            </h2>
+            <p class="mb-4">A box has a square base of dimensions $x \times x$ and height $y$. The box is open at the top.</p>
+
+            <!-- Geogebra Calculator Embed -->
+            <div class="w-full h-[600px] mb-8 rounded-lg overflow-hidden shadow-md border border-gray-200">
+                <iframe src="https://www.geogebra.org/calculator" width="100%" height="100%" allowfullscreen style="border:0;"></iframe>
+            </div>
+
+            <ol>
+                <!-- Question 16 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Write a formula for the surface area of the open-top box.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                $$ A = (\text{Area of base}) + (\text{Area of 4 sides}) $$
+                                $$ A = (x \cdot x) + 4(x \cdot y) $$
+                                $$ A = x^2 + 4xy $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 17 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Suppose the surface area is fixed at 300 cm$^2$. Show that this constraint implies:</p>
+                        $$ y = \frac{300}{4x} - \frac{x}{4} $$
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Given $A = 300$:</p>
+                                $$
+                                \begin{aligned}
+                                    300 &= x^2 + 4xy \\
+                                    300 - x^2 &= 4xy \\
+                                    \frac{300 - x^2}{4x} &= y \\
+                                    y &= \frac{300}{4x} - \frac{x^2}{4x} \\
+                                    y &= \frac{300}{4x} - \frac{x}{4}
+                                \end{aligned}
+                                $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 18 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Write a formula for the volume of the box in terms of $x$ and $y$.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                $$ V = \text{length} \times \text{width} \times \text{height} $$
+                                $$ V = x \cdot x \cdot y $$
+                                $$ V = x^2y $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 19 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Substitute the expression for $y$ into the volume formula so the volume is a function of $x$ only.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Substitute $y = \frac{300}{4x} - \frac{x}{4}$ into $V = x^2y$:</p>
+                                $$
+                                \begin{aligned}
+                                    V(x) &= x^2 \left( \frac{300}{4x} - \frac{x}{4} \right) \\
+                                    V(x) &= \frac{300x^2}{4x} - \frac{x^3}{4} \\
+                                    V(x) &= 75x - \frac{1}{4}x^3
+                                \end{aligned}
+                                $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 20 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Find the value of $x$ that maximises the volume.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>To maximise volume, find $\frac{dV}{dx}$ and set it to zero.</p>
+                                $$
+                                \begin{aligned}
+                                    \frac{dV}{dx} &= \frac{d}{dx}\left(75x - \frac{1}{4}x^3\right) \\
+                                    &= 75 - \frac{3}{4}x^2
+                                \end{aligned}
+                                $$
+                                <p>Set $\frac{dV}{dx} = 0$:</p>
+                                $$
+                                \begin{aligned}
+                                    75 - \frac{3}{4}x^2 &= 0 \\
+                                    75 &= \frac{3}{4}x^2 \\
+                                    300 &= 3x^2 \\
+                                    100 &= x^2 \\
+                                    x &= \pm 10
+                                \end{aligned}
+                                $$
+                                <p>Since $x$ is a dimension, $x > 0$, so $x = 10 \text{ cm}$.</p>
+                                <p>To confirm this is a maximum, find the second derivative $\frac{d^2V}{dx^2}$.</p>
+                                $$
+                                \begin{aligned}
+                                    \frac{d^2V}{dx^2} &= \frac{d}{dx}\left(75 - \frac{3}{4}x^2\right) \\
+                                    &= -\frac{3}{2}x
+                                \end{aligned}
+                                $$
+                                <p>At $x=10$:</p>
+                                $$
+                                \begin{aligned}
+                                    \frac{d^2V}{dx^2}\Big|_{x=10} &= -\frac{3}{2}(10) \\
+                                    &= -15
+                                \end{aligned}
+                                $$
+                                <p>Since $\frac{d^2V}{dx^2} = -15 < 0$, the volume is maximised at $x = 10 \text{ cm}$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 21 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Calculate the corresponding height $y$ and determine the maximum volume.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Using $x=10 \text{ cm}$ and $y = \frac{300}{4x} - \frac{x}{4}$:</p>
+                                $$
+                                \begin{aligned}
+                                    y &= \frac{300}{4(10)} - \frac{10}{4} \\
+                                    &= \frac{300}{40} - 2.5 \\
+                                    &= 7.5 - 2.5 \\
+                                    &= 5 \text{ cm}
+                                \end{aligned}
+                                $$
+                                <p>The corresponding height is $\mathbf{5 \text{ cm}}$.</p>
+                                <p>Calculate the maximum volume using $V = x^2y$:</p>
+                                $$
+                                \begin{aligned}
+                                    V_{\text{max}} &= (10 \text{ cm})^2 \cdot (5 \text{ cm}) \\
+                                    &= 100 \text{ cm}^2 \cdot 5 \text{ cm} \\
+                                    &= 500 \text{ cm}^3
+                                \end{aligned}
+                                $$
+                                <p>The maximum volume is $\mathbf{500 \text{ cm}^3}$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+    <script>
+        // Function to load external HTML content (navbar)
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
+        // Function to load the common header and set the specific page title
+        async function loadHeader() {
+            try {
+                const response = await fetch('../assets/header.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const headerHtml = await response.text();
+                document.getElementById('header-placeholder').innerHTML = headerHtml;
+
+                // Automatically derive the main title from the document's <title> tag
+                const rawPageTitle = document.title;
+                const titleElement = document.getElementById('page-main-title');
+                if (titleElement) {
+                    titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
+                }
+            } catch (error) {
+                console.error("Failed to load header:", error);
+            }
+        }
+
+        // This function handles the expand/collapse logic for solution sections
+        function toggleSolution(header) {
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
+
+            // Toggle the 'expanded' class on both header and content
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+
+            // Adjust max-height for smooth transition
+            if (content.classList.contains('expanded')) {
+                // When expanding, set max-height to its scrollHeight to reveal full content
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                }
+            } else {
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
+            }
+        }
+
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar().then(() => {
+                // Call loadHeader without any parameters, it will now derive the title automatically
+                loadHeader().then(() => {
+                    try {
+                        if (typeof MathJax !== 'undefined') {
+                            MathJax.typesetPromise();
+                        }
+                    } catch (error) {
+                        console.error("MathJax initial typesetting error:", error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
