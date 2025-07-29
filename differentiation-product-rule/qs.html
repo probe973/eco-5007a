@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentiation Product and Quotient Rules</title>
+    <!-- Font Awesome (for icons in navbar and solution toggles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to your shared stylesheet (relative path from this folder) -->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!-- MathJax configuration -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax library -->
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Container -->
+    <div class="content-container">
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Product Rule
+            </h2>
+            <p>Functions that are made of other functions multiplied together can be differentiated using the product rule.</p>
+            $$ y = f(x) \cdot g(x) $$
+            <p>For example, you may have the function:</p>
+            $$ y = x^2 e^x $$
+            <p>Use ‘dummy’ variables to represent the two functions:</p>
+            $$ u = f(x), \quad v = g(x) $$
+            <p>Then:</p>
+            $$ \frac{dy}{dx} = v \cdot \frac{du}{dx} + u \cdot \frac{dv}{dx} $$
+            <p>So, in the example:</p>
+            $$ u = x^2, \quad v = e^x, \quad \frac{du}{dx} = 2x, \quad \frac{dv}{dx} = e^x $$
+            $$ \frac{dy}{dx} = 2x e^x + x^2 e^x = x e^x (2 + x) $$
+
+            <p class="mt-8 mb-4">Differentiate the following:</p>
+            <ol>
+                <!-- Question 1 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 5x e^x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 5x$, $v = e^x$</p>
+                                <p>$\frac{du}{dx} = 5$, $\frac{dv}{dx} = e^x$</p>
+                                $$ \frac{dy}{dx} = 5e^x + 5x e^x = 5e^x(1 + x) $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 2 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = x^3 \ln x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = x^3$, $v = \ln x$</p>
+                                <p>$\frac{du}{dx} = 3x^2$, $\frac{dv}{dx} = \frac{1}{x}$</p>
+                                $$ \frac{dy}{dx} = 3x^2 \ln x + x^3 \cdot \frac{1}{x} = 3x^2 \ln x + x^2 $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 3 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = 4e^x \ln 4x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 4e^x$, $v = \ln 4x$</p>
+                                <p>$\frac{du}{dx} = 4e^x$, $\frac{dv}{dx} = \frac{1}{4x} \cdot 4 = \frac{1}{x}$ (using chain rule for $\ln 4x$)</p>
+                                $$ \frac{dy}{dx} = 4e^x \ln 4x + 4e^x \cdot \frac{1}{x} = 4e^x \ln 4x + \frac{4e^x}{x} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 4 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = (6x^2 + 4x + 1) \ln x^2$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 6x^2 + 4x + 1$, $v = \ln x^2 = 2\ln x$</p>
+                                <p>$\frac{du}{dx} = 12x + 4$, $\frac{dv}{dx} = \frac{2}{x}$</p>
+                                $$ \frac{dy}{dx} = (12x + 4)(2\ln x) + (6x^2 + 4x + 1)\cdot\frac{2}{x} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 5 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = (5x - \frac{3}{x^2}) e^x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 5x - 3x^{-2}$, $v = e^x$</p>
+                                <p>$\frac{du}{dx} = 5 + 6x^{-3} = 5 + \frac{6}{x^3}$, $\frac{dv}{dx} = e^x$</p>
+                                $$ \frac{dy}{dx} = \left(5 + \frac{6}{x^3}\right)e^x + \left(5x - \frac{3}{x^2}\right)e^x $$
+                                $$ = e^x\left(5 + \frac{6}{x^3} + 5x - \frac{3}{x^2}\right) $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Quotient Rule
+            </h2>
+            <p>When a function is produced by a function divided by another function, it can be differentiated with the quotient rule.</p>
+            $$ y = \frac{u}{v}, \quad \frac{dy}{dx} = \frac{v \cdot \frac{du}{dx} - u \cdot \frac{dv}{dx}}{v^2} $$
+            <p>For example:</p>
+            $$ y = \frac{x^2 + 5}{2x - 1} $$
+            $$ u = x^2 + 5, \quad v = 2x - 1 $$
+            $$ \frac{du}{dx} = 2x, \quad \frac{dv}{dx} = 2 $$
+            $$ \frac{dy}{dx} = \frac{(2x - 1)(2x) - (x^2 + 5)(2)}{(2x - 1)^2} = \frac{4x^2 - 2x - 2x^2 - 10}{(2x - 1)^2} $$
+            $$ \frac{dy}{dx} = \frac{2x^2 - 2x - 10}{(2x - 1)^2} $$
+
+            <p class="mt-8 mb-4">Differentiate the following:</p>
+            <ol start="6">
+                <!-- Question 6 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{5x + 2}{x - 4}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 5x + 2$, $v = x - 4$</p>
+                                <p>$\frac{du}{dx} = 5$, $\frac{dv}{dx} = 1$</p>
+                                $$ \frac{dy}{dx} = \frac{(x - 4)(5) - (5x + 2)(1)}{(x - 4)^2} = \frac{5x - 20 - 5x - 2}{(x - 4)^2} = \frac{-22}{(x - 4)^2} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 7 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{e^x}{x^2 + 2x}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = e^x$, $v = x^2 + 2x$</p>
+                                <p>$\frac{du}{dx} = e^x$, $\frac{dv}{dx} = 2x + 2$</p>
+                                $$ \frac{dy}{dx} = \frac{(x^2 + 2x)e^x - e^x(2x + 2)}{(x^2 + 2x)^2} = \frac{e^x(x^2 + 2x - 2x - 2)}{(x^2 + 2x)^2} = \frac{e^x(x^2 - 2)}{(x^2 + 2x)^2} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 8 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{\ln 4x}{x^2 + 5}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = \ln 4x = \ln 4 + \ln x$, $v = x^2 + 5$</p>
+                                <p>$\frac{du}{dx} = \frac{1}{x}$, $\frac{dv}{dx} = 2x$</p>
+                                $$ \frac{dy}{dx} = \frac{(x^2 + 5)\cdot\frac{1}{x} - \ln 4x\cdot 2x}{(x^2 + 5)^2} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 9 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{\sqrt{x}}{e^x}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = x^{1/2}$, $v = e^x$</p>
+                                <p>$\frac{du}{dx} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}$, $\frac{dv}{dx} = e^x$</p>
+                                $$ \frac{dy}{dx} = \frac{e^x\cdot\frac{1}{2\sqrt{x}} - x^{1/2}e^x}{(e^x)^2} = \frac{\frac{e^x}{2\sqrt{x}} - \sqrt{x}e^x}{e^{2x}} = \frac{e^x(\frac{1}{2\sqrt{x}} - \sqrt{x})}{e^{2x}} = \frac{\frac{1}{2\sqrt{x}} - \sqrt{x}}{e^x} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold section-title mb-6">
+                Mixed
+            </h2>
+            <p class="mb-4">The following questions use product and quotient rule. They also make use of the chain rule. Find the derivative:</p>
+            <ol start="10">
+                <!-- Question 10 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = e^{4x}(5x + 2)$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = e^{4x}$, $v = 5x + 2$</p>
+                                <p>$\frac{du}{dx} = 4e^{4x}$ (chain rule), $\frac{dv}{dx} = 5$</p>
+                                $$ \frac{dy}{dx} = 4e^{4x}(5x + 2) + 5e^{4x} = e^{4x}(20x + 8 + 5) = e^{4x}(20x + 13) $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 11 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = (5x - 1)^4 \ln x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = (5x - 1)^4$, $v = \ln x$</p>
+                                <p>$\frac{du}{dx} = 4(5x - 1)^3 \cdot 5 = 20(5x - 1)^3$ (chain rule)</p>
+                                <p>$\frac{dv}{dx} = \frac{1}{x}$</p>
+                                $$ \frac{dy}{dx} = 20(5x - 1)^3 \ln x + \frac{(5x - 1)^4}{x} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 12 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{2x + 5}{e^{9x}}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>$u = 2x + 5$, $v = e^{9x}$</p>
+                                <p>$\frac{du}{dx} = 2$, $\frac{dv}{dx} = 9e^{9x}$ (chain rule)</p>
+                                $$ \frac{dy}{dx} = \frac{e^{9x}(2) - (2x + 5)(9e^{9x})}{(e^{9x})^2} = \frac{2e^{9x} - 18x e^{9x} - 45e^{9x}}{e^{18x}} $$
+                                $$ = \frac{e^{9x}(2 - 18x - 45)}{e^{18x}} = \frac{2 - 18x - 45}{e^{9x}} = \frac{-18x - 43}{e^{9x}} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 13 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = (x^2 + 3x + 1)e^x \ln x$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>This is a product of three functions. We can treat it as $y = f(x) \cdot g(x)$ where $f(x) = (x^2 + 3x + 1)$ and $g(x) = e^x \ln x$.</p>
+                                <p>First product: $u = (x^2 + 3x + 1)$, $\frac{du}{dx} = 2x + 3$</p>
+                                <p>Second product (for $g(x)$): $a = e^x$, $b = \ln x$</p>
+                                <p>$\frac{da}{dx} = e^x$, $\frac{db}{dx} = \frac{1}{x}$</p>
+                                <p>So, $\frac{dg}{dx} = \frac{dv}{dx} = e^x \ln x + e^x \cdot \frac{1}{x} = e^x(\ln x + \frac{1}{x})$</p>
+                                $$ \frac{dy}{dx} = (2x + 3)(e^x \ln x) + (x^2 + 3x + 1)e^x(\ln x + \frac{1}{x}) $$
+                                $$ = e^x \left[ (2x + 3)\ln x + (x^2 + 3x + 1)(\ln x + \frac{1}{x}) \right] $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 14 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{5x e^x}{x + 2}$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>This is a quotient where the numerator is a product.</p>
+                                <p>Numerator $u = 5x e^x$. Using product rule for $u$: $u_1 = 5x$, $u_2 = e^x$. $\frac{du_1}{dx} = 5$, $\frac{du_2}{dx} = e^x$.</p>
+                                <p>So, $\frac{du}{dx} = 5e^x + 5x e^x = 5e^x(1 + x)$</p>
+                                <p>Denominator $v = x + 2$. $\frac{dv}{dx} = 1$</p>
+                                $$ \frac{dy}{dx} = \frac{(x + 2)(5e^x(1 + x)) - (5x e^x)(1)}{(x + 2)^2} $$
+                                $$ = \frac{5e^x(x+2)(1+x) - 5xe^x}{(x+2)^2} $$
+                                $$ = \frac{5e^x[(x+2)(1+x) - x]}{(x+2)^2} $$
+                                $$ = \frac{5e^x[x + x^2 + 2 + 2x - x]}{(x+2)^2} $$
+                                $$ = \frac{5e^x[x^2 + 2x + 2]}{(x+2)^2} $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 15 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">$y = \frac{6x - 7}{x^2 + 1} - 5x \ln(2x - 5)$</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>This involves differentiating two separate terms and subtracting them.</p>
+                                <p>First term: $y_1 = \frac{6x - 7}{x^2 + 1}$ (Quotient Rule)</p>
+                                <p>$u_1 = 6x - 7$, $v_1 = x^2 + 1$</p>
+                                <p>$\frac{du_1}{dx} = 6$, $\frac{dv_1}{dx} = 2x$</p>
+                                $$ \frac{dy_1}{dx} = \frac{(x^2 + 1)(6) - (6x - 7)(2x)}{(x^2 + 1)^2} = \frac{6x^2 + 6 - 12x^2 + 14x}{(x^2 + 1)^2} = \frac{-6x^2 + 14x + 6}{(x^2 + 1)^2} $$
+                                <p>Second term: $y_2 = 5x \ln(2x - 5)$ (Product Rule and Chain Rule)</p>
+                                <p>$u_2 = 5x$, $v_2 = \ln(2x - 5)$</p>
+                                <p>$\frac{du_2}{dx} = 5$, $\frac{dv_2}{dx} = \frac{1}{2x - 5} \cdot 2 = \frac{2}{2x - 5}$ (chain rule)</p>
+                                $$ \frac{dy_2}{dx} = 5 \ln(2x - 5) + 5x \left(\frac{2}{2x - 5}\right) = 5 \ln(2x - 5) + \frac{10x}{2x - 5} $$
+                                <p>Final derivative $\frac{dy}{dx} = \frac{dy_1}{dx} - \frac{dy_2}{dx}$:</p>
+                                $$ \frac{dy}{dx} = \frac{-6x^2 + 14x + 6}{(x^2 + 1)^2} - \left(5 \ln(2x - 5) + \frac{10x}{2x - 5}\right) $$
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+    <script>
+        // Function to load external HTML content (navbar)
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
+        // Function to load the common header and set the specific page title
+        async function loadHeader() {
+            try {
+                const response = await fetch('../assets/header.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const headerHtml = await response.text();
+                document.getElementById('header-placeholder').innerHTML = headerHtml;
+
+                // Automatically derive the main title from the document's <title> tag
+                const rawPageTitle = document.title;
+                const titleElement = document.getElementById('page-main-title');
+                if (titleElement) {
+                    titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
+                }
+            } catch (error) {
+                console.error("Failed to load header:", error);
+            }
+        }
+
+        // This function handles the expand/collapse logic for solution sections
+        function toggleSolution(header) {
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
+
+            // Toggle the 'expanded' class on both header and content
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+
+            // Adjust max-height for smooth transition
+            if (content.classList.contains('expanded')) {
+                // When expanding, set max-height to its scrollHeight to reveal full content
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                }
+            } else {
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
+            }
+        }
+
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar().then(() => {
+                // Call loadHeader without any parameters, it will now derive the title automatically
+                loadHeader().then(() => {
+                    try {
+                        if (typeof MathJax !== 'undefined') {
+                            MathJax.typesetPromise();
+                        }
+                    } catch (error) {
+                        console.error("MathJax initial typesetting error:", error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
