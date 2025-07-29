@@ -16,14 +16,13 @@
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
 
-    <!-- Navbar Placeholder -->
+    <!-- Navbar Placeholder - ONLY ONE INSTANCE HERE -->
     <div id="navbar-placeholder"></div>
-
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
 
     <!-- Main Content Container -->
     <div class="content-container">
+        <!-- Header Placeholder - NOW CORRECTLY INSIDE content-container -->
+        <div id="header-placeholder"></div>
 
         <section class="mb-12">
             <h2 class="text-3xl font-bold section-title mb-6">
@@ -325,7 +324,6 @@
                                 <p>Denominator $v = x + 2$. $\frac{dv}{dx} = 1$</p>
                                 $$ \frac{dy}{dx} = \frac{(x + 2)(5e^x(1 + x)) - (5x e^x)(1)}{(x + 2)^2} $$
                                 $$ = \frac{5e^x(x+2)(1+x) - 5xe^x}{(x+2)^2} $$
-                                $$ = \frac{5e^x[(x+2)(1+x) - x]}{(x+2)^2} $$
                                 $$ = \frac{5e^x[x + x^2 + 2 + 2x - x]}{(x+2)^2} $$
                                 $$ = \frac{5e^x[x^2 + 2x + 2]}{(x+2)^2} $$
                             </div>
