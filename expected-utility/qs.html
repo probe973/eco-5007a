@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marshallian Demand</title>
+    <!-- Font Awesome (for icons in navbar and solution toggles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to your shared stylesheet (relative path from this folder) -->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!-- MathJax configuration -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax library -->
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+  <!-- Main Content Container -->
+<div class="content-container">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold section-title mb-6">
+            Expected Value and Utility Optimisation
+        </h2>
+        <div class="prose max-w-none">
+            <p>For each question below, find the solution and then reveal the answer.</p>
+            <ol>
+                <!-- Question 1 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">Find the expected values for the following:</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li><p class="question-body-text">A game pays $75$ with probability $0.4$, $25$ with probability $0.3$, and $10$ with probability $0.3$.</p></li>
+                            <li><p class="question-body-text">A variable $X$ takes values $5, 10, 15, 20$ with probabilities $0.1, 0.2, 0.4, 0.3$ respectively.</p></li>
+                            <li><p class="question-body-text">A random process yields $100$ with $20\%$ chance, $20$ with $50\%$ chance, and $-10$ with $30\%$ chance.</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>The expected value (EV) is calculated as $EV = \sum x_i P(x_i)$.</p>
+                                        $$
+                                        \begin{aligned}
+                                            EV &= (75 \times 0.4) + (25 \times 0.3) + (10 \times 0.3) \\
+                                            &= 30 + 7.5 + 3 \\
+                                            &= 40.5
+                                        \end{aligned}
+                                        $$
+                                        <p>The expected value is $40.5$.</p>
+                                    </li>
+                                    <li>
+                                        $$
+                                        \begin{aligned}
+                                            EV &= (5 \times 0.1) + (10 \times 0.2) + (15 \times 0.4) + (20 \times 0.3) \\
+                                            &= 0.5 + 2 + 6 + 6 \\
+                                            &= 14.5
+                                        \end{aligned}
+                                        $$
+                                        <p>The expected value is $14.5$.</p>
+                                    </li>
+                                    <li>
+                                        $$
+                                        \begin{aligned}
+                                            EV &= (100 \times 0.2) + (20 \times 0.5) + (-10 \times 0.3) \\
+                                            &= 20 + 10 - 3 \\
+                                            &= 27
+                                        \end{aligned}
+                                        $$
+                                        <p>The expected value is $27$.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 2 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">An investor has current wealth of $\pounds 500$ and utility function $U(w) = w^2$. They invest in a venture. Their total wealth will become $\pounds 600$ with $70\%$ probability, or $\pounds 450$ with $30\%$ probability. Calculate the expected utility of this investment.</p>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>The investor's utility function is $U(w) = w^2$. Expected utility (EU) is calculated as $EU = \sum U(w_i) P(w_i)$.</p>
+                                $$
+                                \begin{aligned}
+                                    EU &= U(600) \times 0.7 + U(450) \times 0.3 \\
+                                    &= (600^2 \times 0.7) + (450^2 \times 0.3) \\
+                                    &= (360000 \times 0.7) + (202500 \times 0.3) \\
+                                    &= 252000 + 60750 \\
+                                    &= 312750
+                                \end{aligned}
+                                $$
+                                <p>The expected utility of this investment is $312750$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 3 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">For each of the options below, find the option that yields the greatest expected utility:</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li>
+                                <p class="question-body-text">An individual has current wealth $\pounds 1,000$ and utility function $U(w) = w$. They consider two investment choices:</p>
+                                <ol class="list-lower-roman list-inside pl-4">
+                                    <li><p class="question-body-text">A secure investment where total wealth becomes $\pounds 1,100$ with $100\%$ certainty.</p></li>
+                                    <li><p class="question-body-text">A risky investment where total wealth becomes $\pounds 1,300$ with $60\%$ probability, or $\pounds 900$ with $40\%$ probability.</p></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="question-body-text">A decision-maker has $\pounds 500$ in current capital and utility function $U(c) = c^2$. They evaluate two project proposals:</p>
+                                <ol class="list-lower-roman list-inside pl-4">
+                                    <li><p class="question-body-text">Project Alpha: Capital remains $\pounds 500$ with $100\%$ certainty.</p></li>
+                                    <li><p class="question-body-text">Project Beta: Capital becomes $\pounds 700$ with $25\%$ probability, or $\pounds 400$ with $75\%$ probability.</p></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="question-body-text">A firm with $\pounds 10,000$ in assets has utility function $U(a) = \sqrt{a}$. They face a $10\%$ chance of a $\pounds 2,000$ loss due to an event. They can either:</p>
+                                <ol class="list-lower-roman list-inside pl-4">
+                                    <li><p class="question-body-text">Accept the risk without protection.</p></li>
+                                    <li><p class="question-body-text">Purchase a protection plan for a premium of $\pounds 150$ that fully covers the $\pounds 2,000$ loss if the event occurs.</p></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="question-body-text">A policy maker with initial support score of $100$ has utility function $U(s) = \ln(s)$. They are choosing between two policies:</p>
+                                <ol class="list-lower-roman list-inside pl-4">
+                                    <li><p class="question-body-text">Policy X: Guarantees a support score of $110$.</p></li>
+                                    <li><p class="question-body-text">Policy Y: Results in a support score of $130$ with $50\%$ probability, or $95$ with $50\%$ probability.</p></li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>Initial wealth is $\pounds 1,000$. Utility function is $U(w) = w$.</p>
+                                        <ol class="list-lower-roman list-inside pl-4">
+                                            <li>
+                                                <p>Secure Investment: Wealth becomes $\pounds 1,100$ with $100\%$ certainty.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_i &= U(1100) \times 1 \\
+                                                    &= 1100 \times 1 \\
+                                                    &= 1100
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                            <li>
+                                                <p>Risky Investment: Wealth becomes $\pounds 1,300$ with $60\%$ prob, or $\pounds 900$ with $40\%$ prob.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_{ii} &= U(1300) \times 0.6 + U(900) \times 0.4 \\
+                                                    &= 780 + 360 \\
+                                                    &= 1140
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                        </ol>
+                                        <p>Comparing $EU_i = 1100$ and $EU_{ii} = 1140$, the <strong>risky investment (ii)</strong> yields the greater expected utility.</p>
+                                    </li>
+                                    <li>
+                                        <p>Current capital is $\pounds 500$. Utility function is $U(c) = c^2$.</p>
+                                        <ol class="list-lower-roman list-inside pl-4">
+                                            <li>
+                                                <p>Project Alpha: Capital remains $\pounds 500$ with $100\%$ certainty.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_i &= U(500) \times 1 \\
+                                                    &= 500^2 \times 1 \\
+                                                    &= 250000
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                            <li>
+                                                <p>Project Beta: Capital becomes $\pounds 700$ with $25\%$ prob, or $\pounds 400$ with $75\%$ prob.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_{ii} &= U(700) \times 0.25 + U(400) \times 0.75 \\
+                                                    &= (700^2 \times 0.25) + (400^2 \times 0.75) \\
+                                                    &= 122500 + 120000 \\
+                                                    &= 242500
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                        </ol>
+                                        <p>Comparing $EU_i = 250000$ and $EU_{ii} = 242500$, <strong>Project Alpha (i)</strong> yields the greater expected utility.</p>
+                                    </li>
+                                    <li>
+                                        <p>Current assets are $\pounds 10,000$. Utility function is $U(a) = \sqrt{a}$. Probability of $\pounds 2,000$ loss is $10\%$.</p>
+                                        <ol class="list-lower-roman list-inside pl-4">
+                                            <li>
+                                                <p>Accept the risk without protection.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_i &= U(10000) \times 0.9 + U(10000-2000) \times 0.1 \\
+                                                    &= (10000)^{0.5} \times 0.9 + (8000)^{0.5} \times 0.1 \\
+                                                    &\approx (100 \times 0.9) + (89.4427 \times 0.1) \\
+                                                    &= 90 + 8.94427 \\
+                                                    &= 98.94427
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                            <li>
+                                                <p>Purchase protection plan for $\pounds 150$: Loss is fully covered.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_{ii} &= U(10000-150) \times 1 \\
+                                                    &= (9850)^{0.5} \\
+                                                    &= 99.24716
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                        </ol>
+                                        <p>Comparing $EU_i = 98.94427$ and $EU_{ii} = 99.24716$, purchasing the <strong>protection plan (ii)</strong> yields the greater expected utility.</p>
+                                    </li>
+                                    <li>
+                                        <p>Initial support score is $100$. Utility function is $U(s) = \ln(s)$.</p>
+                                        <ol class="list-lower-roman list-inside pl-4">
+                                            <li>
+                                                <p>Policy X: Guarantees a support score of $110$.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_i &= U(110) \times 1 \\
+                                                    &= \ln(110) \\
+                                                    &= 4.70048
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                            <li>
+                                                <p>Policy Y: Results in $130$ with $50\%$ prob, or $95$ with $50\%$ prob.</p>
+                                                $$
+                                                \begin{aligned}
+                                                    EU_{ii} &= U(130) \times 0.5 + U(95) \times 0.5 \\
+                                                    &= (\ln(130) \times 0.5) + (\ln(95) \times 0.5) \\
+                                                    &\approx 2.433765 + 2.27694 \\
+                                                    &= 4.710705
+                                                \end{aligned}
+                                                $$
+                                            </li>
+                                        </ol>
+                                        <p>Comparing $EU_i = 4.70048$ and $EU_{ii} = 4.710705$, <strong>Policy Y (ii)</strong> yields the greater expected utility.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 4 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">An individual has just purchased an asset worth $\pounds 100,000$. If a specific adverse event occurs, the asset's value would drop to $\pounds 20,000$. The probability of this event is $5\%$. An insurance company offers to pay $\pounds x$ in the event of the adverse event, if the individual pays an insurance premium of $\pounds 0.08x$. The premium must be paid regardless of whether the event occurs. The individual's utility function is $U(\text{wealth}) = (\text{wealth})^{0.5}$.</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li><p class="question-body-text">Write down the individual's expected utility if they buy insurance coverage of $\pounds x$.</p></li>
+                            <li><p class="question-body-text">How much insurance (value of $x$) will the individual buy to maximize their expected utility, and what will their insurance premium be?</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Initial asset value: $\pounds 100,000$. Loss: $\pounds 80,000$ (to $\pounds 20,000$).<br>Probability of adverse event: $p_L = 0.05$. Coverage: $\pounds x$. Premium: $\pounds 0.08x$.<br>Utility function: $U(\text{wealth}) = (\text{wealth})^{0.5}$.</p>
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>Expected utility if they buy insurance coverage of $\pounds x$:</p>
+                                        <ul>
+                                            <li>If no adverse event (prob $0.95$):<br>Wealth $= 100,000 - 0.08x$</li>
+                                            <li>If adverse event (prob $0.05$):<br>Wealth $= 100,000 - 80,000 - 0.08x + x = 20,000 + 0.92x$</li>
+                                        </ul>
+                                        <p>So, the expected utility $EU(x)$ is:</p>
+                                        $$ EU(x) = 0.95 (100,000 - 0.08x)^{0.5} + 0.05 (20,000 + 0.92x)^{0.5} $$
+                                    </li>
+                                    <li>
+                                        <p>To maximize expected utility, we take the derivative of $EU(x)$ with respect to $x$ and set it to zero.</p>
+                                        $$
+                                        \begin{aligned}
+                                            \frac{dEU}{dx} &= 0.95 \times 0.5 (100,000 - 0.08x)^{-0.5} (-0.08) \\
+                                            &\quad + 0.05 \times 0.5 (20,000 + 0.92x)^{-0.5} (0.92) = 0 \\[1em]
+                                            \frac{-0.038}{ (100,000 - 0.08x)^{0.5}} &+ \frac{0.023}{ (20,000 + 0.92x)^{0.5}} = 0 \\
+                                            \frac{0.023}{ (20,000 + 0.92x)^{0.5}} &= \frac{0.038}{ (100,000 - 0.08x)^{0.5}}
+                                        \end{aligned}
+                                        $$
+                                        <p>Cross-multiply and square both sides:</p>
+                                        $$
+                                        \begin{aligned}
+                                            0.023 (100,000 - 0.08x)^{0.5} &= 0.038 (20,000 + 0.92x)^{0.5} \\
+                                            (0.023)^2 (100,000 - 0.08x) &= (0.038)^2 (20,000 + 0.92x) \\
+                                            0.000529 (100,000 - 0.08x) &= 0.001444 (20,000 + 0.92x) \\
+                                            52.9 - 0.00004232x &= 28.88 + 0.00132848x \\
+                                            52.9 - 28.88 &= 0.00132848x + 0.00004232x \\
+                                            24.02 &= 0.0013708x \\
+                                            x &= \frac{24.02}{0.0013708} \approx 17522.61
+                                        \end{aligned}
+                                        $$
+                                        <p>The optimal insurance coverage is $\mathbf{\pounds 17,522.61}$.</p>
+                                        <p>The insurance premium will be $0.08x$:</p>
+                                        $$ \text{Premium} = 0.08 \times 17522.61 \approx \mathbf{\pounds 1,401.81} $$
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 5 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">An investor has $\pounds 10,000$. They can invest an amount $\pounds x$ in a new project. With $60\%$ probability, the project pays back $2.5x$ (a gain of $1.5x$). With $40\%$ probability, the project results in a loss of $0.5x$ (meaning $0.5x$ is returned, $0.5x$ is lost). The money not invested remains unchanged. The investor's utility function is $U(\text{wealth}) = (\text{wealth})^{0.75}$.</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li><p class="question-body-text">Express the investor's expected utility as a function of the amount $\pounds x$ invested.</p></li>
+                            <li><p class="question-body-text">Determine the optimal amount $\pounds x$ that maximizes their expected utility.</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Initial capital: $\pounds 10,000$. Investment amount: $\pounds x$.<br>Utility function: $U(\text{capital}) = (\text{capital})^{0.75}$.</p>
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>Express expected utility as a function of $x$:</p>
+                                        <ul>
+                                            <li>Success (prob $0.6$): Capital $= (10,000 - x) + 2.5x = 10,000 + 1.5x$</li>
+                                            <li>Failure (prob $0.4$): Capital $= (10,000 - x) + 0.5x = 10,000 - 0.5x$</li>
+                                        </ul>
+                                        <p>So, the expected utility $EU(x)$ is:</p>
+                                        $$ EU(x) = 0.6 (10,000 + 1.5x)^{0.75} + 0.4 (10,000 - 0.5x)^{0.75} $$
+                                    </li>
+                                    <li>
+                                        <p>To find the optimal $x$, take the derivative of $EU(x)$ with respect to $x$ and set to zero.</p>
+                                        $$
+                                        \begin{aligned}
+                                            \frac{dEU}{dx} &= 0.6 \times 0.75 (10,000 + 1.5x)^{-0.25} (1.5) \\
+                                            &\quad + 0.4 \times 0.75 (10,000 - 0.5x)^{-0.25} (-0.5) = 0 \\[1em]
+                                            0.675 (10,000 + 1.5x)^{-0.25} &- 0.15 (10,000 - 0.5x)^{-0.25} = 0 \\
+                                            0.675 (10,000 + 1.5x)^{-0.25} &= 0.15 (10,000 - 0.5x)^{-0.25} \\
+                                            \frac{0.675}{0.15} &= \frac{(10,000 + 1.5x)^{0.25}}{(10,000 - 0.5x)^{0.25}} \\
+                                            4.5 &= \left( \frac{10,000 + 1.5x}{10,000 - 0.5x} \right)^{0.25}
+                                        \end{aligned}
+                                        $$
+                                        <p>Raise both sides to the power of $4$:</p>
+                                        $$
+                                        \begin{aligned}
+                                            4.5^4 &= \frac{10,000 + 1.5x}{10,000 - 0.5x} \\
+                                            410.0625 &= \frac{10,000 + 1.5x}{10,000 - 0.5x} \\
+                                            410.0625 (10,000 - 0.5x) &= 10,000 + 1.5x \\
+                                            4,100,625 - 205.03125x &= 10,000 + 1.5x \\
+                                            4,090,625 &= 1.5x + 205.03125x \\
+                                            4,090,625 &= 206.53125x \\
+                                            x &= \frac{4,090,625}{206.53125} \approx 19806.31
+                                        \end{aligned}
+                                        $$
+                                        <p>The optimal investment amount is approximately $\mathbf{\pounds 19,806.31}$.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 6 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">A retired individual has $\pounds 50,000$ in savings. Their utility for total savings is $U(\text{savings}) = \ln(\text{savings})$. They are considering investing an amount $\pounds x$ into a particular stock. If the stock performs well (with $70\%$ probability), the invested amount yields a $60\%$ return (i.e., $1.6x$). If it performs poorly (with $30\%$ probability), they lose $40\%$ of the invested amount (i.e., $0.6x$ remains). The rest of their savings are held securely and do not change.</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li><p class="question-body-text">Formulate the individual's expected utility as a function of the investment amount $\pounds x$.</p></li>
+                            <li><p class="question-body-text">Calculate the amount $\pounds x$ that the individual should invest to maximize their expected utility.</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Initial savings: $\pounds 50,000$. Investment amount: $\pounds x$.<br>Utility function: $U(\text{savings}) = \ln(\text{savings})$.</p>
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>Formulate expected utility as a function of $x$:</p>
+                                        <ul>
+                                            <li>Stock performs well (prob $0.7$): Savings $= (50,000 - x) + 1.6x = 50,000 + 0.6x$</li>
+                                            <li>Stock performs poorly (prob $0.3$): Savings $= (50,000 - x) + 0.6x = 50,000 - 0.4x$</li>
+                                        </ul>
+                                        <p>So, the expected utility $EU(x)$ is:</p>
+                                        $$ EU(x) = 0.7 \ln(50,000 + 0.6x) + 0.3 \ln(50,000 - 0.4x) $$
+                                    </li>
+                                    <li>
+                                        <p>To find the optimal $x$, take the derivative of $EU(x)$ with respect to $x$ and set to zero.</p>
+                                        $$
+                                        \begin{aligned}
+                                            \frac{dEU}{dx} &= 0.7 \times \frac{0.6}{50,000 + 0.6x} + 0.3 \times \frac{-0.4}{50,000 - 0.4x} = 0 \\[1em]
+                                            \frac{0.42}{50,000 + 0.6x} - \frac{0.12}{50,000 - 0.4x} &= 0 \\
+                                            \frac{0.42}{50,000 + 0.6x} &= \frac{0.12}{50,000 - 0.4x}
+                                        \end{aligned}
+                                        $$
+                                        <p>Cross-multiply:</p>
+                                        $$
+                                        \begin{aligned}
+                                            0.42 (50,000 - 0.4x) &= 0.12 (50,000 + 0.6x) \\
+                                            21,000 - 0.168x &= 6,000 + 0.072x \\
+                                            15,000 &= 0.24x \\
+                                            x &= \frac{15,000}{0.24} = 62,500
+                                        \end{aligned}
+                                        $$
+                                        <p>Since the initial savings are $\pounds 50,000$, and we cannot invest more than we have, the optimal investment amount is limited by the budget. Therefore, the optimal investment amount is $\mathbf{\pounds 50,000}$.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 7 -->
+                <li>
+                    <div class="question-block mb-8">
+                        <p class="question-body-text">A fund manager has a current wealth of $\pounds 2,000,000$. Their utility for wealth is $U(W) = -e^{-0.0000005W}$. They can invest an amount $\pounds x$ (where $x \ge 0$) into a highly volatile asset. This asset yields a return such that the invested $x$ becomes $1.8x$ with $50\%$ probability, or $0.5x$ with $50\%$ probability. The rest of their wealth $(\pounds 2,000,000 - x)$ is kept in a risk-free account.</p>
+                        <ol class="list-lower-alpha list-inside pl-4">
+                            <li><p class="question-body-text">Write down the fund manager's expected utility as a function of the investment amount $\pounds x$.</p></li>
+                            <li><p class="question-body-text">Determine the optimal investment amount $\pounds x$ that maximizes their expected utility.</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)">
+                                <span>Show Solution</span>
+                                <i class="fas fa-chevron-right icon"></i>
+                            </div>
+                            <div class="solution-content">
+                                <p>Initial wealth: $\pounds 2,000,000$. Investment amount: $\pounds x$.<br>Utility function: $U(W) = -e^{-0.0000005W}$.</p>
+                                <ol class="list-lower-alpha list-inside pl-4">
+                                    <li>
+                                        <p>Write down expected utility as a function of $x$:</p>
+                                        <ul>
+                                            <li>Asset performs well (prob $0.5$): Wealth $= (2,000,000 - x) + 1.8x = 2,000,000 + 0.8x$</li>
+                                            <li>Asset performs poorly (prob $0.5$): Wealth $= (2,000,000 - x) + 0.5x = 2,000,000 - 0.5x$</li>
+                                        </ul>
+                                        <p>So, the expected utility $EU(x)$ is:</p>
+                                        $$
+                                        \begin{aligned}
+                                            EU(x) &= 0.5 (-e^{-0.0000005(2,000,000 + 0.8x)}) \\
+                                            &\quad + 0.5 (-e^{-0.0000005(2,000,000 - 0.5x)}) \\
+                                            EU(x) &= -0.5 e^{-1 - 0.0000004x} - 0.5 e^{-1 + 0.00000025x}
+                                        \end{aligned}
+                                        $$
+                                    </li>
+                                    <li>
+                                        <p>To find the optimal $x$, take the derivative of $EU(x)$ with respect to $x$ and set to zero.</p>
+                                        $$
+                                        \begin{aligned}
+                                            \frac{dEU}{dx} &= -0.5 e^{-1 - 0.0000004x} (-0.0000004) \\
+                                            &\quad - 0.5 e^{-1 + 0.00000025x} (0.00000025) = 0 \\[1em]
+                                            0.0000002 e^{-1 - 0.0000004x} &= 0.000000125 e^{-1 + 0.00000025x} \\
+                                            \frac{e^{-1 - 0.0000004x}}{e^{-1 + 0.00000025x}} &= \frac{0.000000125}{0.0000002} \\
+                                            e^{(-1 - 0.0000004x) - (-1 + 0.00000025x)} &= 0.625 \\
+                                            e^{-0.00000065x} &= 0.625
+                                        \end{aligned}
+                                        $$
+                                        <p>Take the natural logarithm of both sides:</p>
+                                        $$
+                                        \begin{aligned}
+                                            -0.00000065x &= \ln(0.625) \\
+                                            -0.00000065x &= -0.4700036 \\
+                                            x &= \frac{-0.4700036}{-0.00000065} \approx 723082.46
+                                        \end{aligned}
+                                        $$
+                                        <p>The optimal investment amount is approximately $\mathbf{\pounds 723,082.46}$.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+</div>
+
+   <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+    <script>
+        // Function to load external HTML content (navbar)
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
+        // Function to load the common header and set the specific page title
+async function loadHeader() { // No pageTitle parameter needed anymore
+    try {
+        const response = await fetch('../assets/header.html');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const headerHtml = await response.text();
+        document.getElementById('header-placeholder').innerHTML = headerHtml;
+
+        // Automatically derive the main title from the document's <title> tag
+        const rawPageTitle = document.title;
+        const titleElement = document.getElementById('page-main-title');
+        if (titleElement) {
+            titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
+        }
+    } catch (error) {
+        console.error("Failed to load header:", error);
+    }
+}
+        
+        // This function handles the expand/collapse logic for solution sections
+        function toggleSolution(header) {
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
+
+            // Toggle the 'expanded' class on both header and content
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+
+            // Adjust max-height for smooth transition
+            if (content.classList.contains('expanded')) {
+                // When expanding, set max-height to its scrollHeight to reveal full content
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                }
+            } else {
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
+            }
+        }
+
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+    loadNavbar().then(() => {
+        // Call loadHeader without any parameters, it will now derive the title automatically
+        loadHeader().then(() => {
+            try {
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise();
+                }
+            } catch (error) {
+                console.error("MathJax initial typesetting error:", error);
+            }
+        });
+    });
+});
+    </script>
+
+</body>
+</html>
