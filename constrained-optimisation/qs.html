@@ -41,23 +41,23 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                                <p><strong>(a) The Lagrangian Function</strong></p>
+                                <p>Lagrangian:</p>
                                 $$ \mathcal{L}(x, y, \lambda) = x^2+2xy+4y+10+\lambda(100-x-y) $$
-                                <p><strong>(b) First-Order Conditions (FOCs)</strong></p>
-                                $$ \frac{\partial \mathcal{L}}{\partial x} = 2x+2y-\lambda=0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial y} = 2x+4-\lambda=0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100-x-y=0 $$
-                                <p><strong>(c) Solving for Optimal Values</strong></p>
-                                <p>From the first two FOCs, we can isolate \(\lambda\):</p>
-                                $$ 2x+2y = \lambda $$
-                                $$ 2x+4 = \lambda $$
-                                <p>Setting these equal gives:</p>
+                                <p>FOCs:</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial x} &= 2x+2y-\lambda=0 \\
+                                    \frac{\partial \mathcal{L}}{\partial y} &= 2x+4-\lambda=0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 100-x-y=0
+                                \end{align*}
+                                $$
+                                <p>Make \(\lambda\) the subject of the first two FOCs and set them equal:</p>
                                 $$ 2x+2y = 2x+4 \implies 2y=4 \implies y=2 $$
-                                <p>Substitute \(y=2\) into the constraint (the third FOC):</p>
-                                $$ 100-x-2=0 \implies x=98 $$
-                                <p>Substitute the optimal values of \(x\) and \(y\) back into the objective function \(z\):</p>
-                                $$ z = (98)^2 + 2(98) + 4(2) + 10 = 9818 $$
-                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=9818\).</p>
+                                <p>Substitute into constraint:</p>
+                                $$ x+2=100 \implies x=98 $$
+                                <p>Substitute into \(z\):</p>
+                                $$ z = (98)^2 + 2(98)(2) + 4(2) + 10 = 10014 $$
+                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=10014\).</p>
                             </div>
                         </div>
                     </div>
@@ -70,25 +70,28 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                                <p>The Lagrangian is:</p>
+                                <p>Lagrangian:</p>
                                 $$ \mathcal{L} = 12x+4y+\lambda(1000-x^{0.3}y^{0.7}) $$
-                                <p>The FOCs are:</p>
-                                $$ \frac{\partial \mathcal{L}}{\partial x} = 12 - 0.3\lambda x^{-0.7}y^{0.7} = 0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial y} = 4 - 0.7\lambda x^{0.3}y^{-0.3} = 0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 1000-x^{0.3}y^{0.7} = 0 $$
-                                <p>Isolating the terms with \(\lambda\):</p>
-                                $$ 12 = 0.3\lambda x^{-0.7}y^{0.7} $$
-                                $$ 4 = 0.7\lambda x^{0.3}y^{-0.3} $$
-                                <p>Dividing the first equation by the second:</p>
-                                $$ \frac{12}{4} = \frac{0.3\lambda x^{-0.7}y^{0.7}}{0.7\lambda x^{0.3}y^{-0.3}} \implies 3 = \frac{3}{7} \frac{y}{x} $$
-                                <p>Solving for \(y\):</p>
-                                $$ 21x = 3y \implies y=7x $$
-                                <p>Substitute into the constraint:</p>
-                                $$ x^{0.3}(7x)^{0.7} = 1000 \implies x^{0.3} \cdot 7^{0.7} \cdot x^{0.7} = 1000 $$
-                                $$ 7^{0.7}x = 1000 \implies x = \frac{1000}{7^{0.7}} \approx 256.1 $$
-                                <p>Now find \(y\) and \(z\):</p>
-                                $$ y = 7x \approx 7(256.1) \approx 1792.8 $$
-                                $$ z = 12(256.1) + 4(1792.8) \approx 10244 $$
+                                <p>FOCs:</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial x} &= 12 - 0.3\lambda x^{-0.7}y^{0.7} = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial y} &= 4 - 0.7\lambda x^{0.3}y^{-0.3} = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 1000-x^{0.3}y^{0.7} = 0
+                                \end{align*}
+                                $$
+                                <p>Rearrange and divide:</p>
+                                $$ \frac{12}{4} = \frac{0.3\lambda x^{-0.7}y^{0.7}}{0.7\lambda x^{0.3}y^{-0.3}} \implies 3 = \frac{3y}{7x} \implies y=7x $$
+                                <p>Substitute into constraint and solve:</p>
+                                $$
+                                \begin{align*}
+                                    x^{0.3}(7x)^{0.7} &= 1000 \\
+                                    7^{0.7}x &= 1000 \\
+                                    x &= \frac{1000}{7^{0.7}} \approx 256.1 \\
+                                    y &= 7x \approx 1792.8 \\
+                                    z &= 12x+4y \approx 10244
+                                \end{align*}
+                                $$
                                 <p><strong>Optimal Solution:</strong> \(x \approx 256.1\), \(y \approx 1792.8\), \(z \approx 10244\).</p>
                             </div>
                         </div>
@@ -102,23 +105,29 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                                <p>The Lagrangian is:</p>
+                                <p>Lagrangian:</p>
                                 $$ \mathcal{L} = x^{0.6}y^{0.4}+\lambda(120-5x-8y) $$
-                                <p>The FOCs are:</p>
-                                $$ \frac{\partial \mathcal{L}}{\partial x} = 0.6x^{-0.4}y^{0.4} - 5\lambda = 0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial y} = 0.4x^{0.6}y^{-0.6} - 8\lambda = 0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 120 - 5x - 8y = 0 $$
-                                <p>Isolating the terms with \(\lambda\) and dividing gives:</p>
-                                $$ \frac{0.6x^{-0.4}y^{0.4}}{0.4x^{0.6}y^{-0.6}} = \frac{5\lambda}{8\lambda} \implies \frac{3}{2}\frac{y}{x} = \frac{5}{8} $$
-                                <p>Solving for \(y\):</p>
-                                $$ \frac{y}{x} = \frac{5}{8} \cdot \frac{2}{3} = \frac{10}{24} = \frac{5}{12} \implies y = \frac{5}{12}x $$
-                                <p>Substitute into the constraint:</p>
-                                $$ 5x + 8\left(\frac{5}{12}x\right) = 120 \implies 5x + \frac{10}{3}x = 120 $$
-                                $$ \frac{15x+10x}{3} = 120 \implies \frac{25}{3}x = 120 \implies x = \frac{120 \cdot 3}{25} = 14.4 $$
-                                <p>Now find \(y\) and \(z\):</p>
-                                $$ y = \frac{5}{12}(14.4) = 6 $$
-                                $$ z = (14.4)^{0.6}(6)^{0.4} \approx 10.1 $$
-                                <p><strong>Optimal Solution:</strong> \(x = 14.4\), \(y = 6\), \(z \approx 10.1\).</p>
+                                <p>FOCs:</p>
+                                $$
+                                \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial x} &= 0.6x^{-0.4}y^{0.4} - 5\lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial y} &= 0.4x^{0.6}y^{-0.6} - 8\lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 120-5x-8y=0
+                                \end{align*}
+                                $$
+                                <p>Rearrange and divide:</p>
+                                $$ \frac{0.6x^{-0.4}y^{0.4}}{0.4x^{0.6}y^{-0.6}} = \frac{5\lambda}{8\lambda} \implies \frac{3y}{2x} = \frac{5}{8} \implies y = \frac{5}{12}x $$
+                                <p>Substitute into constraint:</p>
+                                $$
+                                \begin{align*}
+                                    5x + 8\left(\frac{5}{12}x\right) &= 120 \\
+                                    5x + \frac{10}{3}x &= 120 \\
+                                    \frac{25}{3}x &= 120 \\
+                                    x &= 14.4 \\
+                                    y &= 6 \\
+                                    z &= 10.1
+                                \end{align*}
+                                $$
                             </div>
                         </div>
                     </div>
@@ -135,23 +144,30 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                               <p><strong>(a) Budget Constraint</strong></p>
-                               $$ 2x+4y=100 $$
+                               <p><strong>(a) Budget Constraint:</strong> \( 2x+4y=100 \)</p>
                                <p><strong>(b) Utility Maximisation</strong></p>
-                               <p>The Lagrangian is:</p>
+                               <p>Lagrangian:</p>
                                $$ \mathcal{L} = x^{0.5}y^{0.5} + \lambda(100 - 2x - 4y) $$
-                               <p>The FOCs are:</p>
-                               $$ \frac{\partial \mathcal{L}}{\partial x} = 0.5x^{-0.5}y^{0.5} - 2\lambda = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial y} = 0.5x^{0.5}y^{-0.5} - 4\lambda = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100-2x-4y=0 $$
-                               <p>Dividing the first two conditions gives:</p>
+                               <p>FOCs:</p>
+                               $$
+                               \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial x} &= 0.5x^{-0.5}y^{0.5} - 2\lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial y} &= 0.5x^{0.5}y^{-0.5} - 4\lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 100-2x-4y=0
+                               \end{align*}
+                               $$
+                               <p>Rearrange and divide:</p>
                                $$ \frac{0.5x^{-0.5}y^{0.5}}{0.5x^{0.5}y^{-0.5}} = \frac{2\lambda}{4\lambda} \implies \frac{y}{x} = \frac{1}{2} \implies x=2y $$
-                               <p>Substitute into the budget constraint:</p>
-                               $$ 2(2y) + 4y = 100 \implies 8y = 100 \implies y = 12.5 $$
-                               <p>Now find \(x\) and \(U\):</p>
-                               $$ x = 2(12.5) = 25 $$
-                               $$ U = (25)^{0.5}(12.5)^{0.5} \approx 17.7 $$
-                               <p><strong>Optimal Solution:</strong> The consumer should buy 25 units of good x and 12.5 units of good y for a maximum utility of approximately 17.7.</p>
+                               <p>Substitute into constraint and solve:</p>
+                               $$
+                               \begin{align*}
+                                    2(2y) + 4y &= 100 \\
+                                    8y &= 100 \\
+                                    y &= 12.5 \\
+                                    x &= 25 \\
+                                    U &\approx 17.7
+                               \end{align*}
+                               $$
                             </div>
                         </div>
                     </div>
@@ -162,37 +178,57 @@
                     <div class="question-block">
                         <p class="question-body-text">A firm's production is \(Q=L^{\alpha}K^{\beta}\). The cost of labour is 10 and capital is 20. Total output is constrained to 100 units.</p>
                         <ol type="a" class="list-alpha mt-2">
-                            <li>Use the Lagrangian method to derive the optimal input functions \(L^*\) and \(K^*\).</li>
+                            <li>Use the Lagrangian method to show that minimum cost occurs when \( L = \frac{2\alpha K}{\beta} \) to give expressions for \(L^*\) and \(K^*\).</li>
                             <li>Find the optimal values and minimum cost for (i) \(\alpha=\beta=0.5\) and (ii) \(\alpha=0.3, \beta=0.7\).</li>
                         </ol>
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
                                <p><strong>(a) Deriving Optimal Inputs</strong></p>
-                               <p>We want to minimise cost \(C=10L+20K\) subject to the constraint \(L^{\alpha}K^{\beta}=100\).</p>
-                               <p>The Lagrangian is:</p>
+                               <p>Minimize \(C=10L+20K\) subject to \(L^{\alpha}K^{\beta}=100\).</p>
                                $$ \mathcal{L} = 10L+20K+\lambda(100 - L^{\alpha}K^{\beta}) $$
-                               <p>The FOCs are:</p>
-                               $$ \frac{\partial \mathcal{L}}{\partial L} = 10 - \lambda \alpha L^{\alpha-1}K^{\beta} = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial K} = 20 - \lambda \beta L^{\alpha}K^{\beta-1} = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100 - L^{\alpha}K^{\beta} = 0 $$
-                               <p>Dividing the first two conditions:</p>
+                               <p>FOCs:</p>
+                               $$
+                               \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial L} &= 10 - \lambda \alpha L^{\alpha-1}K^{\beta} = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial K} &= 20 - \lambda \beta L^{\alpha}K^{\beta-1} = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 100 - L^{\alpha}K^{\beta} = 0
+                               \end{align*}
+                               $$
+                               <p>Rearrange and divide:</p>
                                $$ \frac{10}{20} = \frac{\lambda \alpha L^{\alpha-1}K^{\beta}}{\lambda \beta L^{\alpha}K^{\beta-1}} \implies \frac{1}{2} = \frac{\alpha K}{\beta L} \implies L = \frac{2\alpha K}{\beta} $$
-                               <p>Substitute this into the production constraint:</p>
-                               $$ \left(\frac{2\alpha K}{\beta}\right)^{\alpha} K^{\beta} = 100 \implies \left(\frac{2\alpha}{\beta}\right)^{\alpha} K^{\alpha+\beta} = 100 $$
-                               $$ K^{\alpha+\beta} = 100 \left(\frac{2\alpha}{\beta}\right)^{-\alpha} \implies K^* = \left( 100 \left(\frac{2\alpha}{\beta}\right)^{-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
-                               <p>Substitute \(K^*\) back into the expression for \(L\):</p>
-                               $$ L = \frac{2\alpha}{\beta} K = \left(\frac{2\alpha}{\beta}\right) \left( 100 \left(\frac{2\alpha}{\beta} \right)^{-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
-                               $$ L^* = \left( 100 \left(\frac{2\alpha}{\beta}\right)^{1-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
+                               <p>Substitute into constraint and solve:</p>
+                               $$
+                               \begin{align*}
+                                    \left( \frac{2 \alpha K}{\beta} \right )^{\alpha}K^{\beta} &= 100 \\
+                                    \left( \frac{2 \alpha}{\beta} \right )^{\alpha}K^{\alpha + \beta} &= 100 \\
+                                    K^{\alpha +\beta} &= 100 \left (\frac{2 \alpha}{\beta} \right )^{-\alpha} \\
+                                    K=K^* &= \left( 100 \left(\frac{2\alpha}{\beta} \right)^{-\alpha} \right)^{\frac{1}{\alpha+\beta}}
+                               \end{align*}
+                               $$
+                               $$
+                               \begin{align*}
+                                    L &= \frac{2\alpha K}{\beta} \\
+                                    L=L^* &= \left( 100 \left(\frac{2\alpha}{\beta} \right)^{\beta} \right)^{\frac{1}{\alpha+\beta}}
+                               \end{align*}
+                               $$
                                <p><strong>(b) Finding Optimal Values</strong></p>
-                               <p>(i) Case \(\alpha=0.5, \beta=0.5\):</p>
-                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{-0.5}\right)^{\frac{1}{1}} \approx 70.7 $$
-                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{1-0.5}\right)^{\frac{1}{1}} \approx 141.4 $$
-                               $$ C_{min} = 10(141.4) + 20(70.7) = 2828 $$
-                               <p>(ii) Case \(\alpha=0.3, \beta=0.7\):</p>
-                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{-0.3}\right)^{\frac{1}{1}} \approx 104.7 $$
-                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{1-0.3}\right)^{\frac{1}{1}} \approx 89.8 $$
-                               $$ C_{min} = 10(89.8) + 20(104.7) = 2992 $$
+                               <p>(i) \(\alpha=\beta=0.5\):</p>
+                               $$
+                               \begin{align*}
+                                K^* &= \left( 100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{-0.5} \right)^{1} \approx 70.7 \\
+                                L^* &= \left( 100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{0.5} \right)^{1} \approx 141.4 \\
+                                C^* &= 10(141.4) + 20(70.7) = 2828
+                               \end{align*}
+                               $$
+                               <p>(ii) \(\alpha=0.3, \beta=0.7\):</p>
+                               $$
+                               \begin{align*}
+                                    K^* &\approx 104.7 \\
+                                    L^* &\approx 89.8 \\
+                                    C^* &= 2992
+                               \end{align*}
+                               $$
                             </div>
                         </div>
                     </div>
@@ -205,25 +241,29 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                               <p>The objective is to maximise profit \(\Pi = PQ - C\).
+                               <p>Maximise \(\Pi=PQ-C\) subject to \(P=50-Q\).</p>
                                $$ \Pi = PQ - (10+2Q) $$
-                               The constraint is the demand function: \(P=50-Q\).</p>
-                               <p>The Lagrangian is:</p>
+                               <p>Lagrangian:</p>
                                $$ \mathcal{L} = PQ - 10 - 2Q + \lambda(50 - Q - P) $$
-                               <p>The FOCs are:</p>
-                               $$ \frac{\partial \mathcal{L}}{\partial P} = Q - \lambda = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial Q} = P - 2 - \lambda = 0 $$
-                               $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 50 - Q - P = 0 $$
-                               <p>From the first two FOCs, we get:</p>
-                               $$ Q = \lambda $$
-                               $$ P - 2 = \lambda $$
-                               $$ \implies Q = P - 2 $$
-                               <p>Substitute this into the constraint:</p>
-                               $$ 50 - (P-2) - P = 0 \implies 52 - 2P = 0 \implies P = 26 $$
-                               <p>Now find \(Q\) and \(\Pi\):</p>
-                               $$ Q = 26 - 2 = 24 $$
-                               $$ \Pi = (26)(24) - (10 + 2(24)) = 624 - 58 = 566 $$
-                               <p><strong>Optimal Solution:</strong> The monopoly should set a price of \(P=26\) and sell a quantity of \(Q=24\) to achieve a maximum profit of \(566\).</p>
+                               <p>FOCs:</p>
+                               $$
+                               \begin{align*}
+                                    \frac{\partial \mathcal{L}}{\partial P} &= Q - \lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial Q} &= P - 2 - \lambda = 0 \\
+                                    \frac{\partial \mathcal{L}}{\partial \lambda} &= 50 - Q - P = 0
+                               \end{align*}
+                               $$
+                               <p>From the first two FOCs, \(Q = P - 2\).</p>
+                               <p>Substitute into constraint and solve:</p>
+                               $$
+                               \begin{align*}
+                                    P &= 50 - (P-2) \\
+                                    2P &= 52 \\
+                                    P &= 26 \\
+                                    Q &= 24 \\
+                                    \Pi &= 566
+                               \end{align*}
+                               $$
                             </div>
                         </div>
                     </div>
