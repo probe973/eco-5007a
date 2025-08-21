@@ -53,12 +53,11 @@
                                 $$ 2x+4 = \lambda $$
                                 <p>Setting these equal gives:</p>
                                 $$ 2x+2y = 2x+4 \implies 2y=4 \implies y=2 $$
-                                <p>Substitute \(y=2\) into the constraint:</p>
-                                $$ x+2=100 \implies x=98 $$
+                                <p>Substitute \(y=2\) into the constraint (the third FOC):</p>
+                                $$ 100-x-2=0 \implies x=98 $$
                                 <p>Substitute the optimal values of \(x\) and \(y\) back into the objective function \(z\):</p>
-                                $$ z = (98)^2 + 2(98)(2) + 4(2) + 10 = 9604 + 392 + 8 + 10 = 10014 $$
-                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=10014\).</p>
-                                <p class="mt-2 text-sm text-red-700"><em>Note: Your original calculation for z was \(98^2+2\times98+4\times2+10\), which seems to have misinterpreted \(2xy\) as \(2x\). The correct calculation is shown above.</em></p>
+                                $$ z = (98)^2 + 2(98) + 4(2) + 10 = 9818 $$
+                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=9818\).</p>
                             </div>
                         </div>
                     </div>
@@ -76,6 +75,7 @@
                                 <p>The FOCs are:</p>
                                 $$ \frac{\partial \mathcal{L}}{\partial x} = 12 - 0.3\lambda x^{-0.7}y^{0.7} = 0 $$
                                 $$ \frac{\partial \mathcal{L}}{\partial y} = 4 - 0.7\lambda x^{0.3}y^{-0.3} = 0 $$
+                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 1000-x^{0.3}y^{0.7} = 0 $$
                                 <p>Isolating the terms with \(\lambda\):</p>
                                 $$ 12 = 0.3\lambda x^{-0.7}y^{0.7} $$
                                 $$ 4 = 0.7\lambda x^{0.3}y^{-0.3} $$
@@ -87,9 +87,9 @@
                                 $$ x^{0.3}(7x)^{0.7} = 1000 \implies x^{0.3} \cdot 7^{0.7} \cdot x^{0.7} = 1000 $$
                                 $$ 7^{0.7}x = 1000 \implies x = \frac{1000}{7^{0.7}} \approx 256.1 $$
                                 <p>Now find \(y\) and \(z\):</p>
-                                $$ y = 7x \approx 7(256.1) \approx 1792.7 $$
-                                $$ z = 12(256.1) + 4(1792.7) \approx 3073.2 + 7170.8 \approx 10244 $$
-                                <p><strong>Optimal Solution:</strong> \(x \approx 256.1\), \(y \approx 1792.7\), \(z \approx 10244\).</p>
+                                $$ y = 7x \approx 7(256.1) \approx 1792.8 $$
+                                $$ z = 12(256.1) + 4(1792.8) \approx 10244 $$
+                                <p><strong>Optimal Solution:</strong> \(x \approx 256.1\), \(y \approx 1792.8\), \(z \approx 10244\).</p>
                             </div>
                         </div>
                     </div>
@@ -107,6 +107,7 @@
                                 <p>The FOCs are:</p>
                                 $$ \frac{\partial \mathcal{L}}{\partial x} = 0.6x^{-0.4}y^{0.4} - 5\lambda = 0 $$
                                 $$ \frac{\partial \mathcal{L}}{\partial y} = 0.4x^{0.6}y^{-0.6} - 8\lambda = 0 $$
+                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 120 - 5x - 8y = 0 $$
                                 <p>Isolating the terms with \(\lambda\) and dividing gives:</p>
                                 $$ \frac{0.6x^{-0.4}y^{0.4}}{0.4x^{0.6}y^{-0.6}} = \frac{5\lambda}{8\lambda} \implies \frac{3}{2}\frac{y}{x} = \frac{5}{8} $$
                                 <p>Solving for \(y\):</p>
@@ -116,7 +117,7 @@
                                 $$ \frac{15x+10x}{3} = 120 \implies \frac{25}{3}x = 120 \implies x = \frac{120 \cdot 3}{25} = 14.4 $$
                                 <p>Now find \(y\) and \(z\):</p>
                                 $$ y = \frac{5}{12}(14.4) = 6 $$
-                                $$ z = (14.4)^{0.6}(6)^{0.4} \approx 4.49 \cdot 2.05 \approx 10.1 $$
+                                $$ z = (14.4)^{0.6}(6)^{0.4} \approx 10.1 $$
                                 <p><strong>Optimal Solution:</strong> \(x = 14.4\), \(y = 6\), \(z \approx 10.1\).</p>
                             </div>
                         </div>
@@ -142,13 +143,14 @@
                                <p>The FOCs are:</p>
                                $$ \frac{\partial \mathcal{L}}{\partial x} = 0.5x^{-0.5}y^{0.5} - 2\lambda = 0 $$
                                $$ \frac{\partial \mathcal{L}}{\partial y} = 0.5x^{0.5}y^{-0.5} - 4\lambda = 0 $$
-                               <p>Dividing the two conditions gives the marginal rate of substitution equal to the price ratio:</p>
+                               $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100-2x-4y=0 $$
+                               <p>Dividing the first two conditions gives:</p>
                                $$ \frac{0.5x^{-0.5}y^{0.5}}{0.5x^{0.5}y^{-0.5}} = \frac{2\lambda}{4\lambda} \implies \frac{y}{x} = \frac{1}{2} \implies x=2y $$
                                <p>Substitute into the budget constraint:</p>
                                $$ 2(2y) + 4y = 100 \implies 8y = 100 \implies y = 12.5 $$
                                <p>Now find \(x\) and \(U\):</p>
                                $$ x = 2(12.5) = 25 $$
-                               $$ U = (25)^{0.5}(12.5)^{0.5} = 5 \cdot \sqrt{12.5} \approx 17.7 $$
+                               $$ U = (25)^{0.5}(12.5)^{0.5} \approx 17.7 $$
                                <p><strong>Optimal Solution:</strong> The consumer should buy 25 units of good x and 12.5 units of good y for a maximum utility of approximately 17.7.</p>
                             </div>
                         </div>
@@ -173,24 +175,24 @@
                                <p>The FOCs are:</p>
                                $$ \frac{\partial \mathcal{L}}{\partial L} = 10 - \lambda \alpha L^{\alpha-1}K^{\beta} = 0 $$
                                $$ \frac{\partial \mathcal{L}}{\partial K} = 20 - \lambda \beta L^{\alpha}K^{\beta-1} = 0 $$
-                               <p>Dividing the two conditions:</p>
-                               $$ \frac{10}{20} = \frac{\lambda \alpha L^{\alpha-1}K^{\beta}}{\lambda \beta L^{\alpha}K^{\beta-1}} \implies \frac{1}{2} = \frac{\alpha K}{\beta L} \implies \beta L = 2\alpha K \implies L = \frac{2\alpha K}{\beta} $$
+                               $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100 - L^{\alpha}K^{\beta} = 0 $$
+                               <p>Dividing the first two conditions:</p>
+                               $$ \frac{10}{20} = \frac{\lambda \alpha L^{\alpha-1}K^{\beta}}{\lambda \beta L^{\alpha}K^{\beta-1}} \implies \frac{1}{2} = \frac{\alpha K}{\beta L} \implies L = \frac{2\alpha K}{\beta} $$
                                <p>Substitute this into the production constraint:</p>
-                               $$ \left(\frac{2\alpha K}{\beta}\right)^{\alpha} K^{\beta} = 100 \implies \left(\frac{2\alpha}{\beta}\right)^{\alpha} K^{\alpha} K^{\beta} = 100 $$
+                               $$ \left(\frac{2\alpha K}{\beta}\right)^{\alpha} K^{\beta} = 100 \implies \left(\frac{2\alpha}{\beta}\right)^{\alpha} K^{\alpha+\beta} = 100 $$
                                $$ K^{\alpha+\beta} = 100 \left(\frac{2\alpha}{\beta}\right)^{-\alpha} \implies K^* = \left( 100 \left(\frac{2\alpha}{\beta}\right)^{-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
-                               <p>To find \(L^*\), substitute \(K^*\) back into the expression for \(L\). To bring the \(\left(\frac{2\alpha}{\beta}\right)\) term inside the main bracket, we raise it to the power of \(\alpha+\beta\):</p>
-                               $$ L = \frac{2\alpha}{\beta} K^* = \left[ \left(\frac{2\alpha}{\beta}\right)^{\alpha+\beta} \cdot 100 \left(\frac{2\alpha}{\beta}\right)^{-\alpha} \right]^{\frac{1}{\alpha+\beta}} $$
-                               $$ L^* = \left( 100 \left(\frac{2\alpha}{\beta}\right)^{\beta} \right)^{\frac{1}{\alpha+\beta}} $$
-                               <p class="mt-2 text-sm text-red-700"><em>Note: The correct exponent inside the bracket for \(L^*\) is \(\beta\). Your original solution used \(1-\alpha\), which only works if \(\alpha+\beta=1\). The formula above is the general solution.</em></p>
+                               <p>Substitute \(K^*\) back into the expression for \(L\):</p>
+                               $$ L = \frac{2\alpha}{\beta} K = \left(\frac{2\alpha}{\beta}\right) \left( 100 \left(\frac{2\alpha}{\beta} \right)^{-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
+                               $$ L^* = \left( 100 \left(\frac{2\alpha}{\beta}\right)^{1-\alpha} \right)^{\frac{1}{\alpha+\beta}} $$
                                <p><strong>(b) Finding Optimal Values</strong></p>
                                <p>(i) Case \(\alpha=0.5, \beta=0.5\):</p>
-                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{-0.5}\right)^{\frac{1}{1}} = 100 \cdot 2^{-0.5} = \frac{100}{\sqrt{2}} \approx 70.7 $$
-                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{0.5}\right)^{\frac{1}{1}} = 100 \cdot 2^{0.5} = 100\sqrt{2} \approx 141.4 $$
-                               $$ C_{min} = 10(141.4) + 20(70.7) = 1414 + 1414 = 2828 $$
+                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{-0.5}\right)^{\frac{1}{1}} \approx 70.7 $$
+                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.5}{0.5}\right)^{1-0.5}\right)^{\frac{1}{1}} \approx 141.4 $$
+                               $$ C_{min} = 10(141.4) + 20(70.7) = 2828 $$
                                <p>(ii) Case \(\alpha=0.3, \beta=0.7\):</p>
-                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{-0.3}\right)^{\frac{1}{1}} = 100 \left(\frac{0.6}{0.7}\right)^{-0.3} \approx 104.7 $$
-                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{0.7}\right)^{\frac{1}{1}} = 100 \left(\frac{0.6}{0.7}\right)^{0.7} \approx 89.8 $$
-                               $$ C_{min} = 10(89.8) + 20(104.7) = 898 + 2094 = 2992 $$
+                               $$ K^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{-0.3}\right)^{\frac{1}{1}} \approx 104.7 $$
+                               $$ L^* = \left(100 \left(\frac{2 \cdot 0.3}{0.7}\right)^{1-0.3}\right)^{\frac{1}{1}} \approx 89.8 $$
+                               $$ C_{min} = 10(89.8) + 20(104.7) = 2992 $$
                             </div>
                         </div>
                     </div>
@@ -203,17 +205,19 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                               <p>The objective is to maximise profit \(\Pi = \text{Revenue} - \text{Cost} = PQ - C\).
+                               <p>The objective is to maximise profit \(\Pi = PQ - C\).
                                $$ \Pi = PQ - (10+2Q) $$
                                The constraint is the demand function: \(P=50-Q\).</p>
                                <p>The Lagrangian is:</p>
                                $$ \mathcal{L} = PQ - 10 - 2Q + \lambda(50 - Q - P) $$
                                <p>The FOCs are:</p>
-                               $$ \frac{\partial \mathcal{L}}{\partial P} = Q - \lambda = 0 \implies Q = \lambda $$
-                               $$ \frac{\partial \mathcal{L}}{\partial Q} = P - 2 - \lambda = 0 \implies P - 2 = \lambda $$
+                               $$ \frac{\partial \mathcal{L}}{\partial P} = Q - \lambda = 0 $$
+                               $$ \frac{\partial \mathcal{L}}{\partial Q} = P - 2 - \lambda = 0 $$
                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 50 - Q - P = 0 $$
                                <p>From the first two FOCs, we get:</p>
-                               $$ Q = P - 2 $$
+                               $$ Q = \lambda $$
+                               $$ P - 2 = \lambda $$
+                               $$ \implies Q = P - 2 $$
                                <p>Substitute this into the constraint:</p>
                                $$ 50 - (P-2) - P = 0 \implies 52 - 2P = 0 \implies P = 26 $$
                                <p>Now find \(Q\) and \(\Pi\):</p>
