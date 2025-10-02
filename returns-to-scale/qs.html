@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marshallian Demand</title>
+    <!-- Font Awesome (for icons in navbar and solution toggles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to your shared stylesheet (relative path from this folder) -->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!-- MathJax configuration -->
+    <script type="text/javascript" src="../assets/mathjax_config.js"></script>
+    <!-- MathJax library -->
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
+    </footer>
+
+    <script>
+        // Function to load external HTML content (navbar)
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../assets/navbar.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navbarHtml = await response.text();
+                document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
+            } catch (error) {
+                console.error("Failed to load navbar:", error);
+            }
+        }
+
+        // Function to load the common header and set the specific page title
+async function loadHeader() { // No pageTitle parameter needed anymore
+    try {
+        const response = await fetch('../assets/header.html');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const headerHtml = await response.text();
+        document.getElementById('header-placeholder').innerHTML = headerHtml;
+
+        // Automatically derive the main title from the document's <title> tag
+        const rawPageTitle = document.title;
+        const titleElement = document.getElementById('page-main-title');
+        if (titleElement) {
+            titleElement.textContent = rawPageTitle; // Set the H1 to the cleaned <title>
+        }
+    } catch (error) {
+        console.error("Failed to load header:", error);
+    }
+}
+        
+        // This function handles the expand/collapse logic for solution sections
+        function toggleSolution(header) {
+            const content = header.nextElementSibling; // Get the content div immediately after the header
+            const icon = header.querySelector('.icon'); // Get the icon within the header
+
+            // Toggle the 'expanded' class on both header and content
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+
+            // Adjust max-height for smooth transition
+            if (content.classList.contains('expanded')) {
+                // When expanding, set max-height to its scrollHeight to reveal full content
+                try {
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise([content]).then(() => {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        });
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                    }
+                } catch (error) {
+                    console.error("MathJax typesetting error on expand:", error);
+                    content.style.maxHeight = content.scrollHeight + "px"; // Fallback
+                }
+            } else {
+                // When collapsing, reset max-height to null (or 0)
+                content.style.maxHeight = null;
+            }
+        }
+
+        // Initial MathJax typesetting for any math visible on page load (e.g., in questions)
+        // Load navbar and then typeset MathJax after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', function() {
+    loadNavbar().then(() => {
+        // Call loadHeader without any parameters, it will now derive the title automatically
+        loadHeader().then(() => {
+            try {
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise();
+                }
+            } catch (error) {
+                console.error("MathJax initial typesetting error:", error);
+            }
+        });
+    });
+});
+    </script>
+
+</body>
+</html>
