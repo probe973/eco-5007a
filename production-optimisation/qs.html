@@ -57,9 +57,9 @@
                                     L_{q_B}&=2q_B-\lambda=0\\
                                     L_{\lambda}&=100-q_A-q_B=0
                                     \end{align}
-                                    From equation (1) we have $$\lambda=20$$
-                                    Putting this into equation (2) gives $$2q_B=20 \implies q_B=10$$
-                                    Putting this into equation (3) gives $$100-q_A-10=0 \implies q_A=90$$
+                                    From FOC equation (1) we have $$\lambda=20$$
+                                    Putting this into FOC equation (2) gives $$2q_B=20 \implies q_B=10$$
+                                    Putting this into FOC equation (3) gives $$100-q_A-10=0 \implies q_A=90$$
                                     Total cost for minimisation:
                                     $$TC=TC_A+TC_B=10+20\times 90+2+10^2=1912$$</p>
                                 </li>
@@ -85,23 +85,43 @@
                         <div class="solution-container">
                             <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
                             <div class="solution-content">
-                                <p><strong>(a) The Lagrangian Function</strong></p>
-                                $$ \mathcal{L}(x, y, \lambda) = x^2+2xy+4y+10+\lambda(100-x-y) $$
-                                <p><strong>(b) First-Order Conditions (FOCs)</strong></p>
-                                $$ \frac{\partial \mathcal{L}}{\partial x} = 2x+2y-\lambda=0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial y} = 2x+4-\lambda=0 $$
-                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100-x-y=0 $$
-                                <p><strong>(c) Solving for Optimal Values</strong></p>
-                                <p>From the first two FOCs, we can isolate \(\lambda\):</p>
-                                $$ 2x+2y = \lambda $$
-                                $$ 2x+4 = \lambda $$
-                                <p>Setting these equal gives:</p>
-                                $$ 2x+2y = 2x+4 \implies 2y=4 \implies y=2 $$
-                                <p>Substitute \(y=2\) into the constraint:</p>
-                                $$ x+2=100 \implies x=98 $$
-                                <p>Substitute the optimal values of \(x\) and \(y\) back into the objective function \(z\):</p>
-                                $$ z = (98)^2 + 2(98)(2) + 4(2) + 10 = 9604 + 392 + 8 + 10 = 10014 $$
-                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=10014\).</p>
+                             <ol type="a" class="list-alpha mt-2">
+                                <li>All are at G: $TC=80+10 \times 420^{1.5} \approx 86154$</li>
+                                <li>All are at H: $TC=100+12 \times 420^{1.25} \approx 22916$</li>
+                                <li>
+                                    <p>Minimise the total cost and use both G and H</p>
+                                    <p>$TC=80+10g^{1.5}+100+12h^{1.25}$ subject to $g+h=420$</p>
+                                    <p>Lagrangian: $$L=80+10g^{1.5}+100+12h^{1.25}+\lambda(420-g-h)$$</p>
+                                    <p>FOC:
+                                    \begin{align}
+                                    L_g&=15g^{0.5}-\lambda=0\\
+                                    L_h&=15g^{0.25}-\lambda=0\\
+                                    L_{\lambda}&=420-g-h=0
+                                    \end{align}
+                                    Using first two FOC we have:
+                                        \begin{align}
+                                        15g^{0.5}&=\lambda\\
+                                        15h^{0.25}&=\lambda
+                                        \end{align}
+                                    Dividing these equations we have:
+                                        \begin{align}
+                                        \frac{15g^{0.5}}{15h^{0.25}}&=1\\
+                                        g^{0.5}&=h^{0.25}\\
+                                        \text{raising to power 4:} \hspace{1cm} g^2&=h
+                                        \end{align}
+                                    Substitute for $h$ in the contraint:
+                                        \begin{align*}
+                                        420-g-g^2&=0\\
+                                        \implies g^2+g-420&=0\\
+                                        \implies (g-20)(g+21)&=0\\
+                                        \implies g&=20 \text{ since }g=-21 \text{ is not sensible}\\
+                                        \implies h&=400
+                                        \end{align*}
+                                        So, total cost will be:
+                                        $$TC=80+10\times 20^{1.5}+100+12 \times 400^{1.25} \approx 22451$$
+                                    </p>
+                                </li>
+                             </ol>
                             </div>
                         </div>
                     </div>
