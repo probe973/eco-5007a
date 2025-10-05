@@ -21,8 +21,95 @@
     <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
-<p>This area is being built, but you can you the links at the top to download pdf versions of the questions and the solutions in the meantime.</p>
-<br><br><br><br><br>
+    <!-- Main Content Container -->
+    <div class="content-container">
+        <div id="header-placeholder"></div>
+
+        <section class="mb-12">
+            
+            <ol>
+                <!-- Question 1 -->
+                <li class="mb-8">
+                    <div class="question-block">
+                        <p class="question-body-text"> A company produces an item that can be manufactured on one of two machines (named A and B).  Their primary concern is going to be costs.  If $q_A$ are produced on machine A, the cost of production is
+                         $$TC_A=10+20q_A$$ 
+                            If $q_B$ are produced on machine B, the cost of production is
+                             $$TC_B=2+q_B^{2}$$
+                            The company are about to produce 100 of the item.
+                        </p>
+                        <ol type="a" class="list-alpha mt-2">
+                            <li><p class="question-body-text">What is the total cost if all are produced on machine A?</p></li>
+                            <li><p class="question-body-text">What is the total cost if all are produced on machine B?</p></li>
+                            <li><p class="question-body-text">What combination of machine A and machine B would minimize the total cost, and what would that total cost be?</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
+                            <div class="solution-content">
+                            <ol type="a" class="list-alpha mt-2">
+                                <li>All A: $TC=10+20\times 100=2010$</li>
+                                <li>All B: $TC=2+100^2=10002$</li>
+                                <li>
+                                    <p>Minimise costs $TC_A+TC_B$ subject to $q_A+q_B=100$:</p>
+                                    <p>Lagrangian: $$L=10+20q_A+2+q_B^{2}+\lambda(100-q_A-q_B)$$</p>
+                                    <p>FOC:
+                                    \begin{align}
+                                    L_{q_A}&=20-\lambda=0\\
+                                    L_{q_B}&=2q_B-\lambda=0\\
+                                    L_{\lambda}&=100-q_A-q_B=0
+                                    \end{align}
+                                    From equation (1) we have $$\lambda=20$$
+                                    Putting this into equation (2) gives $$2q_B=20 \implies q_B=10$$
+                                    Putting this into equation (3) gives $$100-q_A-10=0 \implies q_A=90$$
+                                    Total cost for minimisation:
+                                    $$TC=TC_A+TC_B=10+20\times 90+2+10^2=1912$$</p>
+                                </li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Question 2 -->
+                <li class="mb-8">
+                    <div class="question-block">
+                        <p class="question-body-text"> A manufacturing firm has access to two aging factories, G and H, for manufacturing.  The firm does $g$ items from G and $h$ items from H.  The costs of the factory production are:
+                             $$TC_G=80+10g^{1.5}$$
+                            $$TC_H=100+12h^{1.25}$$
+                            If the firm produces 420 items, what is the cost of manufacturing if:
+                        </p>
+                        <ol type="a" class="list-alpha mt-2">
+                            <li><p class="question-body-text">All are at G?</p></li>
+                            <li><p class="question-body-text">All are at H?</p></li>
+                            <li><p class="question-body-text">If they minimise the total cost and use both G and H?</p></li>
+                        </ol>
+                        <div class="solution-container">
+                            <div class="solution-header" onclick="toggleSolution(this)"><span>Show Solution</span><i class="fas fa-chevron-right icon"></i></div>
+                            <div class="solution-content">
+                                <p><strong>(a) The Lagrangian Function</strong></p>
+                                $$ \mathcal{L}(x, y, \lambda) = x^2+2xy+4y+10+\lambda(100-x-y) $$
+                                <p><strong>(b) First-Order Conditions (FOCs)</strong></p>
+                                $$ \frac{\partial \mathcal{L}}{\partial x} = 2x+2y-\lambda=0 $$
+                                $$ \frac{\partial \mathcal{L}}{\partial y} = 2x+4-\lambda=0 $$
+                                $$ \frac{\partial \mathcal{L}}{\partial \lambda} = 100-x-y=0 $$
+                                <p><strong>(c) Solving for Optimal Values</strong></p>
+                                <p>From the first two FOCs, we can isolate \(\lambda\):</p>
+                                $$ 2x+2y = \lambda $$
+                                $$ 2x+4 = \lambda $$
+                                <p>Setting these equal gives:</p>
+                                $$ 2x+2y = 2x+4 \implies 2y=4 \implies y=2 $$
+                                <p>Substitute \(y=2\) into the constraint:</p>
+                                $$ x+2=100 \implies x=98 $$
+                                <p>Substitute the optimal values of \(x\) and \(y\) back into the objective function \(z\):</p>
+                                $$ z = (98)^2 + 2(98)(2) + 4(2) + 10 = 9604 + 392 + 8 + 10 = 10014 $$
+                                <p><strong>Optimal Solution:</strong> \(x=98\), \(y=2\), \(z=10014\).</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+    </ol>
+        </section>
+    </div>
+    
     <!-- Footer Section -->
     <footer class="mt-12 text-center text-gray-500 text-sm">
         <p>Icons by <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Font Awesome</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">CC BY 4.0</a>.</p>
